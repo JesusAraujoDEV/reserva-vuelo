@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#mapaAsientos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#mapaAsientos td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#mapaAsientos td.disponible {
+    background-color: #a3e4d7;
+}
+
+#mapaAsientos td.no-disponible {
+    background-color: #f1948a;
+    cursor: not-allowed;
+}
+
+#pasajerosRegistrados {
+    margin-top: 20px;
+}
+
+#pasajerosRegistrados ul {
+    list-style-type: none;
+    padding: 0;
+}

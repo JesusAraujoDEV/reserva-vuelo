@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva de Vuelo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Reserva de Vuelo</h1>
+    <form id="reservaForm">
+        <label for="nombre">Nombre del pasajero:</label>
+        <input type="text" id="nombre" required>
+        
+        <label for="equipaje">Tipo de equipaje:</label>
+        <select id="equipaje">
+            <option value="mano">Mano</option>
+            <option value="bodega">Bodega</option>
+            <option value="ambos">Ambos</option>
+        </select>
+
+        <label for="asiento">Seleccione su asiento:</label>
+        <select id="asiento" required>
+            <!-- Opciones generadas dinámicamente -->
+        </select>
+
+        <button type="button" onclick="reservarAsiento()">Reservar Asiento</button>
+    </form>
+    
+    <h2>Mapa de Asientos</h2>
+    <table id="mapaAsientos">
+        <!-- Mapa de asientos generado dinámicamente -->
+    </table>
+
+    <button onclick="mostrarPasajeros()">Ver Pasajeros Registrados</button>
+    <div id="pasajerosRegistrados">
+        <!-- Lista de pasajeros -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
