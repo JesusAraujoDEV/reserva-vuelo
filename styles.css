@@ -2,13 +2,21 @@ body {
     font-family: Arial, sans-serif;
 }
 
-#mapaAsientos {
+#tablaPrincipal{
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-#mapaAsientos td {
+#tablaPrincipal td{
+    vertical-align: top;
+}
+
+#tablaAsientosAB, #tablaAsientosCDEFG, #tablaAsientosHJ {
+    border-collapse: collapse;
+}
+
+#tablaAsientosAB td, #tablaAsientosCDEFG td, #tablaAsientosHJ td {
     width: 50px;
     height: 50px;
     text-align: center;
@@ -18,11 +26,11 @@ body {
     transition: background-color 0.3s;
 }
 
-#mapaAsientos td.disponible {
+#tablaAsientosAB td.disponible, #tablaAsientosCDEFG td.disponible, #tablaAsientosHJ td.disponible {
     background-color: #a3e4d7;
 }
 
-#mapaAsientos td.no-disponible {
+#tablaAsientosAB td.no-disponible, #tablaAsientosCDEFG td.no-disponible, #tablaAsientosHJ td.no-disponible {
     background-color: #f1948a;
     cursor: not-allowed;
 }

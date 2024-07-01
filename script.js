@@ -1,22 +1,76 @@
 document.addEventListener('DOMContentLoaded', function () {
-    generarMapaAsientos();
+    generarMapaAsientosAB();
+    generarMapaAsientosCDEFG();
+    generarMapaAsientosHJ();
 });
 
-function generarMapaAsientos() {
-    const filas = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J'];
-    const asientosPorFila = 7; // Según la imagen
+function generarMapaAsientosAB() {
+    const filas = ['A', 'B'];
+    const rangoColumnas = { 'A': [31, 43], 'B': [31, 43] };
+    const mapa = document.getElementById('tablaAsientosAB');
 
-    const mapa = document.getElementById('mapaAsientos');
     for (let i = 30; i <= 45; i++) {
         const fila = document.createElement('tr');
-        for (let j = 0; j < asientosPorFila; j++) {
+        for (let col of filas) {
+            if (i >= rangoColumnas[col][0] && i <= rangoColumnas[col][1]) {
+                const asiento = document.createElement('td');
+                asiento.textContent = col + i;
+                asiento.className = 'disponible';
+                asiento.onclick = function () {
+                    seleccionarAsiento(asiento);
+                };
+                fila.appendChild(asiento);
+            } else {
+                const celdaVacia = document.createElement('td');
+                fila.appendChild(celdaVacia);
+            }
+        }
+        mapa.appendChild(fila);
+    }
+}
+
+function generarMapaAsientosCDEFG() {
+    const filas = ['C', 'D', 'E', 'F', 'G'];
+    const mapa = document.getElementById('tablaAsientosCDEFG');
+
+    for (let i = 30; i <= 45; i++) {
+        const fila = document.createElement('tr');
+        for (let col of filas) {
+            if (i > 40 && col === 'E') {
+                continue; // Omitir la columna 'E' después de la fila 40
+            }
             const asiento = document.createElement('td');
-            asiento.textContent = filas[j] + i;
+            asiento.textContent = col + i;
             asiento.className = 'disponible';
             asiento.onclick = function () {
                 seleccionarAsiento(asiento);
             };
             fila.appendChild(asiento);
+        }
+        mapa.appendChild(fila);
+    }
+}
+
+function generarMapaAsientosHJ() {
+    const filas = ['H', 'J'];
+    const rangoColumnas = { 'H': [31, 43], 'J': [31, 43] };
+    const mapa = document.getElementById('tablaAsientosHJ');
+
+    for (let i = 30; i <= 45; i++) {
+        const fila = document.createElement('tr');
+        for (let col of filas) {
+            if (i >= rangoColumnas[col][0] && i <= rangoColumnas[col][1]) {
+                const asiento = document.createElement('td');
+                asiento.textContent = col + i;
+                asiento.className = 'disponible';
+                asiento.onclick = function () {
+                    seleccionarAsiento(asiento);
+                };
+                fila.appendChild(asiento);
+            } else {
+                const celdaVacia = document.createElement('td');
+                fila.appendChild(celdaVacia);
+            }
         }
         mapa.appendChild(fila);
     }
