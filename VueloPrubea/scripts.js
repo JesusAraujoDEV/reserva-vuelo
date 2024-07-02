@@ -1,35 +1,50 @@
-let puestos = document.querySelector(".todo-puestos")
-for(var i=0;i<60;i++){
+let puestosAB = document.querySelector(".columnaAB");
+for (let i = 0; i < 26; i++) {
     let randint = Math.floor(Math.random() * 2);
-    let ocupado = randint == 1 ? "ocupado" : "";
-    puestos.insertAdjacentHTML(
+    let ocupado = randint === 1 ? "ocupado" : "";
+    puestosAB.insertAdjacentHTML(
         "beforeend",
-        '<input type="checkbox" name="boletos" id="s' +
-        (i + 2) +
-        '" /><label for="s' +
-        (i + 2) +
-        '" class="puesto ' +
-        ocupado +
-        '"></label>'
+        `<input type="checkbox" name="boletos" id="sA${i + 1}" />
+        <label for="sA${i + 1}" class="puesto ${ocupado}"></label>`
     );
 }
 
-let boletos = puestos.querySelectorAll("input");
-      boletos.forEach((ticket) => {
-        ticket.addEventListener("change", () => {
-          let cantidad = document.querySelector(".cantidad").innerHTML;
-          let contador = document.querySelector(".contador").innerHTML;
-          cantidad = Number(cantidad);
-          contador = Number(contador);
+let puestosCDEFG = document.querySelector(".columnaCDEFG");
+for (let i = 0; i < 75; i++) {
+    let randint = Math.floor(Math.random() * 2);
+    let ocupado = randint === 1 ? "ocupado" : "";
+    puestosCDEFG.insertAdjacentHTML(
+        "beforeend",
+        `<input type="checkbox" name="boletos" id="sC${i + 1}" />
+        <label for="sC${i + 1}" class="puesto ${ocupado}"></label>`
+    );
+}
+let puestosHJ = document.querySelector(".columnaHJ");
+for (let i = 0; i < 26; i++) {
+    let randint = Math.floor(Math.random() * 2);
+    let ocupado = randint === 1 ? "ocupado" : "";
+    puestosHJ.insertAdjacentHTML(
+        "beforeend",
+        `<input type="checkbox" name="boletos" id="sA${i + 1}" />
+        <label for="sA${i + 1}" class="puesto ${ocupado}"></label>`
+    );
+}
 
-          if (ticket.checked) {
+// Selecciona todos los inputs después de haberlos añadido
+let boletos = document.querySelectorAll("input[name='boletos']");
+boletos.forEach((ticket) => {
+    ticket.addEventListener("change", () => {
+        let cantidad = Number(document.querySelector(".cantidad").innerHTML);
+        let contador = Number(document.querySelector(".contador").innerHTML);
+
+        if (ticket.checked) {
             contador += 1;
             cantidad += 200;
-          } else {
+        } else {
             contador -= 1;
             cantidad -= 200;
-          }
-          document.querySelector(".cantidad").innerHTML = cantidad;
-          document.querySelector(".contador").innerHTML = contador;
-        });
-      });
+        }
+        document.querySelector(".cantidad").innerHTML = cantidad;
+        document.querySelector(".contador").innerHTML = contador;
+    });
+});

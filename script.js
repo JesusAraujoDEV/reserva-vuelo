@@ -1,122 +1,66 @@
 document.addEventListener('DOMContentLoaded', function () {
-    generarMapaAsientosAB();
-    generarMapaAsientosCDEFG();
-    generarMapaAsientosHJ();
+    const btnMostrarAsientos = document.getElementById('btnMostrarAsientos');
+    const btnMostrarRegistro = document.getElementById('btnMostrarRegistro');
+    const vistaRegistro = document.getElementById('registro');
+    const vistaAsientos = document.getElementById('asientos');
+
+    btnMostrarAsientos.addEventListener('click', function () {
+        vistaRegistro.style.display = 'none';
+        vistaAsientos.style.display = 'block';
+    });
+
+    btnMostrarRegistro.addEventListener('click', function () {
+        vistaAsientos.style.display = 'none';
+        vistaRegistro.style.display = 'block';
+    });
+
+    // Generar asientos aleatorios
+    generarAsientos();
 });
 
-function generarMapaAsientosAB() {
-    const filas = ['A', 'B'];
-    const rangoColumnas = { 'A': [31, 43], 'B': [31, 43] };
-    const mapa = document.getElementById('tablaAsientosAB');
+function generarAsientos() {
+    // Generar asientos para columnas A y B
+    generarColumnaAsientos(".columnaAB", 26);
 
-    for (let i = 30; i <= 45; i++) {
-        const fila = document.createElement('tr');
-        for (let col of filas) {
-            if (i >= rangoColumnas[col][0] && i <= rangoColumnas[col][1]) {
-                const asiento = document.createElement('td');
-                asiento.textContent = col + i;
-                asiento.className = 'disponible';
-                asiento.onclick = function () {
-                    seleccionarAsiento(asiento);
-                };
-                fila.appendChild(asiento);
-            } else {
-                const celdaVacia = document.createElement('td');
-                fila.appendChild(celdaVacia);
-            }
+    // Generar asientos para columnas C a G
+    generarColumnaAsientos(".columnaCDEFG", 75);
+
+    // Generar asientos para columnas H y J
+    generarColumnaAsientos(".columnaHJ", 26);
+}
+
+function generarColumnaAsientos(selector, cantidad) {
+    const columna = document.querySelector(selector);
+    for (let i = 0; i < cantidad; i++) {
+        let randint = Math.floor(Math.random() * 2);
+        let ocupado = randint === 1 ? "ocupado" : "";
+        columna.insertAdjacentHTML(
+            "beforeend",
+            `<input type="checkbox" name="boletos" id="${selector.slice(-5)}${i + 1}" />
+            <label for="${selector.slice(-5)}${i + 1}" class="puesto ${ocupado}"></label>`
+        );
+    }
+}
+
+// Manejar la selección de boletos
+let boletos = document.querySelectorAll("input[name='boletos']");
+boletos.forEach((ticket) => {
+    ticket.addEventListener("change", () => {
+        actualizarContador();
+    });
+});
+
+function actualizarContador() {
+    let cantidad = 0;
+    let contador = 0;
+
+    boletos.forEach((ticket) => {
+        if (ticket.checked) {
+            contador += 1;
+            cantidad += 200; // Precio por boleto seleccionado
         }
-        mapa.appendChild(fila);
-    }
-}
+    });
 
-function generarMapaAsientosCDEFG() {
-    const filas = ['C', 'D', 'E', 'F', 'G'];
-    const mapa = document.getElementById('tablaAsientosCDEFG');
-
-    for (let i = 30; i <= 45; i++) {
-        const fila = document.createElement('tr');
-        for (let col of filas) {
-            if (i > 40 && col === 'E') {
-                continue; // Omitir la columna 'E' después de la fila 40
-            }
-            const asiento = document.createElement('td');
-            asiento.textContent = col + i;
-            asiento.className = 'disponible';
-            asiento.onclick = function () {
-                seleccionarAsiento(asiento);
-            };
-            fila.appendChild(asiento);
-        }
-        mapa.appendChild(fila);
-    }
-}
-
-function generarMapaAsientosHJ() {
-    const filas = ['H', 'J'];
-    const rangoColumnas = { 'H': [31, 43], 'J': [31, 43] };
-    const mapa = document.getElementById('tablaAsientosHJ');
-
-    for (let i = 30; i <= 45; i++) {
-        const fila = document.createElement('tr');
-        for (let col of filas) {
-            if (i >= rangoColumnas[col][0] && i <= rangoColumnas[col][1]) {
-                const asiento = document.createElement('td');
-                asiento.textContent = col + i;
-                asiento.className = 'disponible';
-                asiento.onclick = function () {
-                    seleccionarAsiento(asiento);
-                };
-                fila.appendChild(asiento);
-            } else {
-                const celdaVacia = document.createElement('td');
-                fila.appendChild(celdaVacia);
-            }
-        }
-        mapa.appendChild(fila);
-    }
-}
-
-function seleccionarAsiento(asiento) {
-    if (asiento.classList.contains('no-disponible')) {
-        alert('Este asiento no está disponible');
-        return;
-    }
-    document.getElementById('asiento').value = asiento.textContent;
-}
-
-function reservarAsiento() {
-    const nombre = document.getElementById('nombre').value;
-    const equipaje = document.getElementById('equipaje').value;
-    const asiento = document.getElementById('asiento').value;
-    
-    if (!nombre || !asiento) {
-        alert('Por favor, complete todos los campos');
-        return;
-    }
-
-    const asientoTd = Array.from(document.querySelectorAll('#mapaAsientos td'))
-        .find(td => td.textContent === asiento);
-
-    if (!asientoTd) {
-        alert('Asiento no válido');
-        return;
-    }
-
-    asientoTd.className = 'no-disponible';
-    asientoTd.onclick = null;
-
-    const pasajeroInfo = document.createElement('li');
-    pasajeroInfo.textContent = `Pasajero: ${nombre}, Asiento: ${asiento}, Equipaje: ${equipaje}`;
-    document.getElementById('pasajerosRegistrados').appendChild(pasajeroInfo);
-
-    document.getElementById('reservaForm').reset();
-}
-
-function mostrarPasajeros() {
-    const pasajeros = document.getElementById('pasajerosRegistrados');
-    if (pasajeros.style.display === 'none' || pasajeros.style.display === '') {
-        pasajeros.style.display = 'block';
-    } else {
-        pasajeros.style.display = 'none';
-    }
+    document.querySelector(".cantidad").innerHTML = cantidad;
+    document.querySelector(".contador").innerHTML = contador;
 }

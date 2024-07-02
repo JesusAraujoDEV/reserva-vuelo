@@ -3,19 +3,58 @@ body{
     height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-y: auto;
+    background: linear-gradient(to right,#004d98,#A50044);
 }
-
 .center {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: linear-gradient(
-        to right,
-        #004d98,
-        #A50044
-    );
+    justify-content: flex-start;
+}
+.registro{
+    border: 0.4mm solid rgba(0, 0, 0, 0.08);
+    border-radius: 3mm;
+    box-sizing: border-box;
+    padding: 100px;
+    font-family:poppins;
+    max-height: 96vh;
+    background: white;
+    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.tituloRegistro{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.labelNombre{
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.Mensaje{
+    height: 100px;
+}
+.btnRegistro{
+    background: rgb(60, 60, 60);
+    color: white;
+    font-family: poppins;
+    font-size: 14px;
+    padding: 7px 14px;
+    border-radius: 2mm;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 .boletos{
     width: 550px;
@@ -25,10 +64,10 @@ body{
     box-sizing: border-box;
     padding: 10px;
     font-family:poppins;
-    max-height: 96vh;
-    overflow: auto;
+    max-height: 100vh;
     background: white;
     box-shadow: 0px25px 50px -12px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
 }
 .boletos-selector{
     background: rgb(243, 243, 243);
@@ -66,18 +105,6 @@ body{
     align-items: center;
     justify-content: space-evenly;
 }
-.puestos::before{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%,0);
-    width: 220px;
-    height: 7px;
-    background: skyblue;
-    border-radius: 0 0 3mm 3mm;
-    border-top: 0.3mm solid rgb(180, 180, 18);
-}
 .item{
     font-size: 12px;
     position: relative;
@@ -103,11 +130,32 @@ body{
     outline: none;
 }
 .todo-puestos{
+    display: flex;
+    gap: 20px;
+}
+.columnaAB{
     display: grid;
-    grid-template-columns: repeat(10,1fr);
-    grid-gap: 15px;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5px;
     margin: 60px 0;
-    position: relative;
+    position:relative;
+}
+.columnaCDEFG{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 5px;
+    margin: 60px 0;
+    position:relative;
+}
+.columnaHJ{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5px;
+    margin: 60px 0;
+    position:relative;
+}
+.columna{
+    text-align: center;
 }
 .puesto{
     width: 20px;
@@ -184,6 +232,7 @@ input{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 .total{
     display: flex;

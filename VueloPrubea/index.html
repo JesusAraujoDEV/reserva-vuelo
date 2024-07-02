@@ -19,6 +19,26 @@
 </head>
 <body>
     <div class="center">
+
+        <!--Registroo-->
+        <div class="registro">
+            Hola
+            <h2 class="tituloRegistro">Registro</h2>
+            <form>
+                <label for="nombre" class="labelNombre">Nombre:</label>
+                <input type="text" id="nombre" class="input-Nombre" name="nombre" placeholder="Ingrese su nombre">
+        
+                <label for="email" class="labelCorreo">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico">
+        
+                <label for="mensaje" class="labelNombre">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Ingrese su mensaje"></textarea>
+        
+                <button type="submit" class="btnRegistro">Registrarse</button>
+            </form>
+        </div>
+
+        <!--Asientooos-->
         <div class="boletos">
             <div class="boletos-selector">
                 <div class="head">
@@ -31,8 +51,57 @@
                         <div class="item">Seleccionado</div>
                     </div>
                     <div class="todo-puestos">
-                        <input type="checkbox" name="boletos" id="s1">
-                        <label for="s1" class="puesto ocupado"></label>
+                        <div class="columnaAB">
+                            <div class="columna">
+                                <h2>A</h2>
+                                <input type="checkbox" name="boletos" id="s1">
+                                <label for="s1" class="puesto ocupado"></label>
+                            </div>
+                            <div class="columna">
+                                <h2>B</h2>
+                                <input type="checkbox" name="boletos" id="s2">
+                                <label for="s2" class="puesto ocupado"></label>
+                            </div>
+                        </div>
+                        <div class="columnaCDEFG">
+                            <div class="columna">
+                                <h2>C</h2>
+                                <input type="checkbox" name="boletos" id="s3">
+                                <label for="s3" class="puesto ocupado"></label>
+                            </div>
+                            <div class="columna">
+                                <h2>D</h2>
+                                <input type="checkbox" name="boletos" id="s4">
+                                <label for="s4" class="puesto ocupado"></label>
+                            </div>
+                            <div class="columna">
+                                <h2>E</h2>
+                                <input type="checkbox" name="boletos" id="s5">
+                                <label for="s5" class="puesto ocupado"></label>
+                            </div>
+                            <div class="columna">
+                                <h2>F</h2>
+                                <input type="checkbox" name="boletos" id="s6">
+                                <label for="s6" class="puesto ocupado"></label>
+                            </div>
+                            <div class="columna">
+                                <h2>G</h2>
+                                <input type="checkbox" name="boletos" id="s7">
+                                <label for="s7" class="puesto ocupado"></label>
+                            </div>
+                        </div>
+                        <div class="columnaHJ">
+                            <div class="columna">
+                                <h2>H</h2>
+                                <input type="checkbox" name="boletos" id="s8">
+                                <label for="s8" class="puesto ocupado"></label>
+                            </div>
+                            <div class="columna">
+                                <h2>J</h2>
+                                <input type="checkbox" name="boletos" id="s9">
+                                <label for="s9" class="puesto ocupado"></label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="horarios">
@@ -79,15 +148,15 @@
                         <label for="t4" class="hora">14:30</label>
                     </div>
                 </div>
-            </div>
-            <div class="precio">
-                <div class="total">
-                    <span>
-                        <span class="contador">0</span> Boletos
-                    </span>
-                    <div class="cantidad">0</div>
+                <div class="precio">
+                    <div class="total">
+                        <span>
+                            <span class="contador">0</span> Boletos
+                        </span>
+                        <div class="cantidad">0</div>
+                    </div>
+                    <btn type="btn">Reservar</btn>
                 </div>
-                <btn type="btn">Reservar</btn>
             </div>
         </div>
     </div>
