@@ -1,0 +1,292 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.destinofinal {
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Arrange elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: space-between; /* Distribute space evenly */
+    height: 900px; /* Maintain original height */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+}
+.destinofinal .AvionBanner {
+    background-color: transparent;
+    height: 400px;
+    left: 250px;
+    object-fit: cover;
+    position: absolute;
+    top: 137px;
+    width: 1300px;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .TextoArriba {
+    background-color: transparent;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30;
+    font-style: normal;
+    font-weight: 800;
+    height: auto;
+    left: 90px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 96px;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.destinofinal .avionArriba {
+    background-color: transparent;
+    height: 301px;
+    left: 1200px;
+    position: absolute;
+    top: 0px;
+    width: 421px;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .avionAbajo{
+    background-color: transparent;
+    height: 383px;
+    left: 0px;
+    position: absolute;
+    top: 449px;
+    width: 640px;
+    max-width: 100%;
+    display: block;
+}
+/*Barcelona*/
+.destinofinal .cuadroBarcelona {
+    background-color: transparent;
+    height: 242px;
+    left: 308px;
+    position: absolute;
+    top: 448px;
+    width: 342px;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .SpainBarcelona {
+    background-color: transparent;
+    height: auto;
+    left: 326px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 643px;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.fuente{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15;
+    font-style: normal;
+    font-weight: 600;
+}
+.destinofinal .imagenBarcelona {
+    background-color: transparent;
+    height: 219px;
+    left: 308px;
+    object-fit: cover;
+    position: absolute;
+    top: 402px;
+    width: 342px;
+}
+.comprarBoton {
+    align-items: center;
+    background-color: #004d98;
+    padding: 5px 8px;
+    border-radius: 10px;
+    position: absolute;
+    justify-content: center;
+    gap: 10px;
+    display: inline-flex;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.comprarBoton:active {
+    background-color: #DEEDFF;
+}
+.comprarBarcelonabtn {
+    top: 640px;
+    left: 525px;
+}
+.destinofinal .comprar {
+    padding: 2.5px 5px;
+    border: unset;
+    border-radius: 30px;
+    color: #ffffff;
+    cursor: inherit;
+    margin-top: -1.00px;
+    z-index: 1;
+    background: #004d98;
+    position: relative;
+    text-align: left;
+    font-weight: 1000;
+    font-size: 17px;
+    white-space: nowrap;
+    width: fit-content;
+    transition: all 250ms;
+    overflow: hidden;
+}
+.comprar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 30px;
+    background-color: #DEEDFF;
+    z-index: -1;
+    transition: all 250ms
+}
+.comprar:hover {
+    color: #004d98;
+}
+.comprar:hover::before {
+    width: 100%;
+}
+/*Fin pruebas*/
+.fuente2 {
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15;
+    font-style: normal;
+    font-weight: 500;
+}
+.destinofinal .precioCuadradoBarcelona{
+    align-items: center;
+    background-color: #004d98;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 75px;
+    justify-content: center;
+    left: 560px;
+    padding: 7.5px 7.5px;
+    position: absolute;
+    top: 402px;
+    width: 75px;
+}
+/*Milan*/
+.cuadroMilan{
+    background-color: transparent;
+    height: 242px;
+    left: 730px;
+    position: absolute;
+    top: 448px;
+    width: 342px;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .imagenMilan{
+    background-color: transparent;
+    height: 219px;
+    left: 730px;
+    object-fit: cover;
+    position: absolute;
+    top: 402px;
+    width: 342px;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .ItaliaMilan {
+    background-color: transparent;
+    height: auto;
+    left: 751px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 643px;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.comprarMilanbtn {
+    top: 640px;
+    left: 950px;
+}
+.destinofinal .precioCuadradoMilan{
+    align-items: center;
+    background-color: #004d98;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 75px;
+    justify-content: center;
+    left: 982px;
+    padding: 7.5px 7.5px;
+    position: absolute;
+    top: 402px;
+    width: 75px;
+}
+/*Liverpool*/
+.destinofinal .cuadroLiverpool {
+    background-color: transparent;
+    height: 242px;
+    left: 1150px;
+    position: absolute;
+    top: 448px;
+    width: 342px;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .imagenLiverpool {
+    background-color: transparent;
+    height: 219px;
+    left: 1150px;
+    object-fit: cover;
+    position: absolute;
+    top: 402px;
+    width: 342px;
+}
+.destinofinal .InglaterraLiverpool {
+    background-color: transparent;
+    height: auto;
+    left: 1170px;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 643px;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.comprarLiverpoolbtn {
+    top: 640px;
+    left: 1370px;
+}
+.destinofinal .precioCuadradoLiverpool {
+    align-items: center;
+    background-color: #004d98;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 75px;
+    justify-content: center;
+    left: 1402px;
+    padding: 7.5px 7.5px;
+    position: absolute;
+    top: 402px;
+    width: 75px;
+}
