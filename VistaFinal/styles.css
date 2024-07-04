@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -7,80 +7,86 @@
 body {
     height: 100vh;
     background: #eaeaea;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.fuente2 {
-    color: white;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 15;
-    font-style: normal;
-    font-weight: 500;
-}
-header{
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #004d98;
     width: 100%;
-    height: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
 }
-.logo h1{
-    margin: 0;
+
+.fuente2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5em;
-}
-.paseAbordo{
-    position: relative;
-    width: 320px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: drop-shadow(0 0 4px rgba(0,0,0,0.08));
+    font-weight: 500;
 }
 
-.paseAbordo .factura{
+.paseAbordo-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 80px; /* Para dejar espacio para el header */
+}
+
+.paseAbordo {
+    position: relative;
+    width: 320px;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.08));
+}
+
+.paseAbordo .factura {
     display: flex;
     background-color: #ffffff;
     padding: 24px;
     border-radius: 16px;
 }
 
-.paseAbordo .factura.factura2{
+.paseAbordo .factura.factura2 {
     text-align: center;
     justify-content: space-between;
     border-radius: 16px 16px 0 0;
 }
 
-.paseAbordo .factura.factura2 .codigo{
+.paseAbordo .factura.factura2 .codigo {
     font-size: 32px;
     font-weight: 900;
 }
 
-.paseAbordo .factura.factura2 .ciudad{
+.paseAbordo .factura.factura2 .ciudad {
     font-size: 10px;
     color: #004d98;
 }
-.avion{
+
+.avion {
     height: 70%;
     width: 40%;
 }
-.vueloM{
+
+.vueloM {
     position: relative;
     height: 50px;
     width: 100px;
-    top:12px;
+    top: 12px;
     background-color: #004c9800;
     border-radius: 100% 100% 0 0 / 100% 100% 0 0;
     border: 2px dashed transparent;
     border-top-color: #c7ecee;
 }
 
-.vueloM::before{
+.vueloM::before {
     content: "";
     position: absolute;
     height: 6px;
@@ -92,40 +98,74 @@ header{
     box-shadow: 80px 0 0 #004d98;
 }
 
-.vueloM i{
+.vueloM i {
     position: relative;
     top: -11px;
     color: #004d98;
 }
 
-.paseAbordo .factura.facturaAbajo{
+.paseAbordo .factura.facturaAbajo {
     flex-direction: column;
     border-radius: 0 0 16px 16px;
 }
-.paseAbordo .factura.facturaAbajo .facturaFila{
+
+.paseAbordo .factura.facturaAbajo .facturaFila {
     display: flex;
     justify-content: space-between;
 }
-.paseAbordo .factura.facturaAbajo .facturaFila:not(:last-child){
+
+.paseAbordo .factura.facturaAbajo .facturaFila:not(:last-child) {
     margin-bottom: 32px;
 }
-.paseAbordo .factura.facturaAbajo .label{
+
+.paseAbordo .factura.facturaAbajo .label {
     font-size: 10px;
-    color:#004d98;
+    color: #004d98;
     font-weight: 500;
 }
-.paseAbordo .factura.facturaAbajo .contenido{
+
+.paseAbordo .factura.facturaAbajo .contenido {
     font-size: 14px;
     font-weight: 900;
 }
-.medio{
+
+.medio {
     height: 24px;
     margin: 0 auto;
-    background-image: radial-gradient(circle,transparent 72%, #ffffff 72%),
-    repeating-linear-gradient(90deg,#ffffff 0, #ffffff 2%, #c7ecee 2%, #c7ecee 4%),
-    linear-gradient(#ffffff,#ffffff),
-    radial-gradient(circle,transparent 72%, #ffffff 72%);
-    background-size: 24px 24px, calc(100% -24px) 1px, calc(100% - 24px) 100%, 24px 24px;
+    background-image: radial-gradient(circle, transparent 72%, #ffffff 72%), repeating-linear-gradient(90deg, #ffffff 0, #ffffff 2%, #c7ecee 2%, #c7ecee 4%), linear-gradient(#ffffff, #ffffff), radial-gradient(circle, transparent 72%, #ffffff 72%);
+    background-size: 24px 24px, calc(100% - 24px) 1px, calc(100% - 24px) 100%, 24px 24px;
     background-position: -12px 0, 12px 50%, 12px 0, calc(100% + 12px) 0;
     background-repeat: no-repeat;
+}
+
+
+.pagarBtn {
+    --accent: rgb(61, 106, 255);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: rgb(61, 106, 255);
+    cursor: pointer;
+    color: white;
+    padding: 1em 2em;
+    transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+    letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+}
+.pagarBtn:hover {
+    box-shadow: var(--accent) 0px 0px 30px 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(61, 106, 255);
+    transform: scale(0.95);
+    border: rgb(61, 106, 255);
+    border-color: rgb (61, 106, 255);
+}
+
+.pagarBtn:active {
+    box-shadow: var(--accent) 0px 0px 30px 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(61, 106, 255);
+    transform: scale(0.95);
+    border: rgb(61, 106, 255);
+    border-color: rgb (61, 106, 255);
 }
