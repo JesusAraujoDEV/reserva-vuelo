@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Vuelos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>VuelosC</h1>
+        </div>
+
+    </header>
+
+    <div class="input-div">
+        <div class="datos-div">
+            <div class="text-container">
+                <span class="texto-persona">Adulto 1:</span>
+            </div>
+
+            <div class="titulo-icono">
+                <div class="input-group">
+                    <label class="label">Nombre</label>
+                    <input autocomplete="off" class="input-style" type="text">
+                    <div></div>
+                </div>
+                <div class="input-group">
+                    <label class="label">Apellido</label>
+                    <input autocomplete="off" class="input-style" type="text">
+                    <div></div>
+                </div>
+                
+                <div class="input-group">
+                    <label class="label">Género</label>
+                    <select class="input-style-select">
+                        <option value="" disabled selected>Elija      una oc</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="titulo-icono">
+                <div class="input-group">
+                    <label class="label">Fecha de Nacimiento</label>
+                    <div class="input-style-group">
+                        <select class="input-style-select">
+                            <option value="" disabled selected>Día</option>
+                            <!-- Opciones para el día -->
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <!-- ... hasta 31 -->
+                        </select>
+                
+                        <select class="input-style-select">
+                            <option value="" disabled selected>Mes</option>
+                            <!-- Opciones para el mes -->
+                            <option value="enero">Enero</option>
+                            <option value="febrero">Febrero</option>
+                            <option value="marzo">Marzo</option>
+                            <!-- ... hasta diciembre -->
+                        </select>
+                
+                        <select class="input-style-select">
+                            <option value="" disabled selected>Año</option>
+                            <!-- Opciones para el año -->
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <!-- ... hasta el año que desees -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="label">Nacionalidad</label>
+                    <select class="input-style-select" id="nacionalidadSelect">
+                        <option value="" disabled selected>Elija una opción</option>
+                        <option value="venezuela">Venezuela</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="estados unidos">Estados Unidos</option>
+                    </select>
+                </div>
+            </div>
+
+           
+
+            </div>
+        </div>
+          
+        <!-- Puedes agregar contenido aquí si es necesario -->
+    </div>
+
+    <div class="equipajes">
+        <div class="text-container">
+            <span class="pretty-text">Personaliza tu viaje</span>
+        </div>
+        
+        <div class="cards">
+            <div class="card">
+                <div class="card-details">
+                    <div class="titulo-icono">
+                        <img src="maleta.png" alt="imagen de una maleta" class="img-clase">
+                        <p class="text-title">Equipaje de mano y bodega</p>
+                    </div>
+                </div>
+                <div class="descripcion-text">
+                    <p class="text-body">Revisa el equipaje incluido en la tarifa y añade el que necesite</p>
+                </div>
+
+                <div class="desde-text">
+                    <p class="text-body">Desde</p>
+                </div>
+                <div class="titulo-icono">
+                    <p class="precio-titulo">USD 70,<span class="decimales">00</span></p>
+                    <button class="comprar-button">Comprar</button>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-details">
+                    <div class="titulo-icono">
+                        <img src="bicicleta.png" alt="imagen de una maleta" class="img-clase">
+                        <p class="text-title">Equipaje deportivo</p>
+                    </div>
+                </div>
+                <div class="descripcion-text">
+                    <p class="text-body">Vuela con tu pasión a todas partes</p>
+                </div>
+
+                <div class="desde-text">
+                    <p class="text-body">Desde</p>
+                </div>
+                <div class="titulo-icono">
+                    <p class="precio-titulo">USD 100,<span class="decimales">00</span></p>
+                    <button class="comprar-button">Comprar</button>
+
+                </div>
+            </div>
+
+        </div>      
+    </div>
+
+    <div class="button-div">
+        <button class="asientos-button">Elegir asientos</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
