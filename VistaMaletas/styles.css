@@ -1,0 +1,811 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8%;
+    background-color: #0077B6; /* Color azul */
+    color: #FFFFFF;
+    width: 100%;
+    height: 1%; /* Altura fija del header */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.input-div {
+    background-color: #eff7ff;
+    width: 32%;
+    height: calc(100vh - 60px); /* Resta la altura del header */
+    position: relative; /* Cambia a relativo para que los hijos se posicionen respecto a este contenedor */
+    top: 1%; /* Empieza justo debajo del header */
+    left: 0;
+    display: flex;
+    flex-direction: column; /* Apila los elementos en columna */
+    justify-content: flex-start; /* Alinea los elementos hacia el inicio (arriba) */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 2%;
+    border-right: 2px solid #2c3e50; /* Añade un borde para separar el div */
+    overflow-y: auto; /* Añade desplazamiento vertical si el contenido es demasiado largo */
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    gap: 1rem; /* Añade espacio entre los elementos */
+}
+
+/* Asegura que los elementos dentro del div ocupen todo el ancho disponible */
+.input-div > * {
+    width: 100%;
+    max-width: 90%; /* Máximo ancho del 90% para que no toquen los bordes */
+}
+
+.equipajes {
+    padding-left: 70%;
+    height: 50%;
+    border-radius: 20px;
+    position: absolute;
+    top: 10%;
+    width: 50%;
+    left: 38%;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start; /* Alinea elementos al inicio del eje principal */
+    align-items: flex-start; /* Alinea elementos al inicio del eje transversal */
+    flex-direction: column;
+    padding: 2%; /* Añade un padding para que el texto no esté pegado a los bordes */
+}
+
+.text-container {
+    text-align: left;
+    width: 100%; /* Asegura que el contenedor de texto ocupe el 100% del ancho disponible */
+    padding-bottom: 1%;
+}
+
+
+/* Estilos específicos para el texto bonito */
+.pretty-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700; /* Aplicar negrita */
+    font-size: 1.5em;
+    color: #2c3e50; /* Color oscuro para buen contraste */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+    margin: 10px 0; /* Espaciado alrededor del texto */
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Transiciones suaves */
+}
+
+
+/* Efecto hover para interactividad */
+.pretty-text:hover {
+    color: #00796b; /* Cambio de color al pasar el ratón */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+}
+
+.titulo-icono {
+    display: flex; /* Utiliza flexbox para alinear los elementos en fila */
+    align-items: center; /* Alinea verticalmente el texto e imagen en el centro */
+    gap: 10px; /* Añade espacio entre la imagen y el texto */
+    width: 100%; /* Ajusta el ancho del contenedor */
+    justify-content: space-between; /* Alinea los elementos al principio de la fila */
+}
+
+
+.card {
+    width: 80%;
+    height: 70%;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(61, 106, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #5f61cf;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+  }
+  
+  .card-button:hover {
+    background: rgb(61, 106, 255);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+  .card-button:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .card-button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .card-button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+
+/* Hover */
+.card:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+    opacity: 1;
+}
+
+.img-clase {
+    width: 30%; /* Ajusta el ancho */
+    height: 90%; /* Mantiene la proporción */
+}
+
+
+.text-body {
+    color: rgb(134, 134, 134);
+}
+
+.text-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.desde-text {
+    display: flex; /* Utiliza flexbox para manejar la alineación */
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    width: 100%; /* Asegúrate de que el contenedor tenga un ancho completo */
+    margin: 0; /* Elimina cualquier margen que pueda afectar la posición */
+    padding: 0; /* Elimina cualquier padding interno */
+    height: 30px;
+}
+
+.descripcion-text{
+    display: flex; /* Utiliza flexbox para manejar la alineación */
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    width: 100%; /* Asegúrate de que el contenedor tenga un ancho completo */
+    margin: 0; /* Elimina cualquier margen que pueda afectar la posición */
+    padding: 0; /* Elimina cualquier padding interno */
+    height: 30%;
+}
+
+.precio-titulo{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.decimales{
+    color: rgb(134, 134, 134);
+    font-size: 0.8em;
+}
+
+.cards{
+    width: 100%;
+    height: auto;
+    padding: 1%;
+    border-radius: 20px;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    display: flex;
+    justify-content: flex-start; /* Cambiar a flex-start para alinear los elementos al inicio */
+    align-items: center;
+    gap: 20px;
+}
+
+.button-div{
+    width: 30%;
+
+    position: absolute;
+    bottom: 0.1%;
+    left: 60%;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start; /* Alinea elementos al inicio del eje principal */
+    align-items: flex-start; /* Alinea elementos al inicio del eje transversal */
+    flex-direction: column;
+    padding: 20px; /* Añade un padding para que el texto no esté pegado a los bordes */
+}
+
+.asientos-button {
+    --accent: rgb(61, 106, 255);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: rgb(61, 106, 255);
+    cursor: pointer;
+    color: white;
+    padding: 1em 2em;
+    transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+      letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+  }
+  
+  .asientos-button:hover {
+    box-shadow: var(--accent) 0px 0px 30px 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(61, 106, 255);
+    transform: scale(0.95);
+    border: rgb(61, 106, 255);
+    border-color: rgb (61, 106, 255);
+  }
+  
+  .asientos-button:active {
+    box-shadow: var(--accent) 0px 0px 30px 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(61, 106, 255);
+    transform: scale(0.95);
+    border: rgb(61, 106, 255);
+    border-color: rgb (61, 106, 255);
+  }
+
+.comprar-button{
+    --accent: rgb(61, 106, 255);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border-color: rgb(61, 106, 255);
+    border-radius: 1.1em;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    color: rgb(61, 106, 255);
+    padding: 1em 2em;
+    transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+      letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+  }
+  
+  .comprar-button:hover {
+    box-shadow: var(--hover-shadows);
+  }
+  
+  .comprar-button:active {
+    box-shadow: var(--accent) 0px 0px 30px 5px;
+    background-color: rgb(61, 106, 255);
+    color: rgb(255, 255, 255);
+    transform: scale(0.95);
+    border: rgb(61, 106, 255);
+    border-color: rgb (61, 106, 255);
+  } 
+
+.datos-div{
+    width: 80%;
+    height: 30%;
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start; /* Alinea elementos al inicio del eje principal */
+    align-items: flex-start; /* Alinea elementos al inicio del eje transversal */
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    padding: 20px; /* Añade un padding para que el texto no esté pegado a los bordes */
+}
+
+.datos-div-titular{
+    width: 80%;
+    height: 30%;
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 2%;
+    left: 10px;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start; /* Alinea elementos al inicio del eje principal */
+    align-items: flex-start; /* Alinea elementos al inicio del eje transversal */
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    padding: 20px; /* Añade un padding para que el texto no esté pegado a los bordes */
+}
+
+.datos-div-deportivo{
+    width: 80%;
+    height: 30%;
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start; /* Alinea elementos al inicio del eje principal */
+    align-items: flex-start; /* Alinea elementos al inicio del eje transversal */
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    padding: 20px; /* Añade un padding para que el texto no esté pegado a los bordes */
+}
+
+.texto-persona{
+    color: #04254d;
+    font-size: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Contenedor para los dropdowns */
+.dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Ajusta el ancho según tus necesidades */
+    background-color: #f5f5f5; /* Color de fondo del contenedor */
+    border: 2px solid #ccc; /* Bordes del contenedor */
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+}
+
+/* Estilo común para los dropdowns */
+.dropdown {
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+    width: 30%;
+    text-align: center; /* Centra el texto en cada dropdown */
+    cursor: pointer;
+    max-height: 40px; /* Altura máxima de la caja */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    box-sizing: border-box; /* Incluye padding y border en la altura total */
+}
+
+/* Añadir bordes entre los dropdowns para que parezca un solo input */
+.day-dropdown {
+    border-right: 2px solid #ccc;
+}
+
+.month-dropdown {
+    border-right: 2px solid #ccc;
+}
+
+/* Elimina el borde de la derecha en el último dropdown */
+.year-dropdown {
+    border-right: none;
+}
+
+/* Estilo de scroll personalizado para los dropdowns */
+.dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 10px;
+}
+
+/* Pseudo-elemento para la flecha del dropdown */
+.dropdown::after {
+    content: '▼';
+    font-size: 12px;
+    color: #007bff;
+    position: absolute;
+    right: 15px;
+    pointer-events: none; /* Hace que la flecha no interrumpa la interacción con el select */
+}
+
+/* Estilos al hacer foco */
+.dropdown:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.input-style {
+    width: 60%;
+    height: 44px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #05060f99;
+    transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+  }
+  
+  .input-style:hover, .input-style:focus, .input-group:hover .input-style {
+    outline: none;
+    border-color: #05060f;
+    border-color: #007bff;
+  }
+  
+  .input-group:hover, .input-style:focus {
+    color: #05060fc2;
+    border-color: #007bff;
+  }
+
+.input-style-select{
+    width: 100%;
+    height: 44px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+
+.input-style-email{
+    width: 100%;
+    height: 44px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group-email {
+    width: 100%;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #05060f99;
+}
+
+.input-style-group {
+    display: flex;
+    gap: 0.5rem; /* Espacio entre los dropdowns */
+    align-items: center;
+}
+
+.input-style-select {
+    width: calc(100% + 0.5em); /* Ajusta el ancho para que se vean uniformes */
+    height: 44px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25, .01, .25, 1) 0s, color .3s cubic-bezier(.25, .01, .25, 1) 0s, background .2s cubic-bezier(.25, .01, .25, 1) 0s;
+    color: #555;
+    appearance: none; /* Oculta la flecha por defecto en algunos navegadores */
+    background-size: 0.65em auto;
+}
+
+.input-style-select select{
+    width: 5px;
+}
+
+.input-style-select:hover,
+.input-style-select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo para hacer que los dropdowns tengan un scroll cuando hay muchas opciones */
+.input-style-select option {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Estilo base para el contenedor de la tarjeta */
+.medio-div {
+    position: fixed; /* Cambia a fixed para que se mantenga en la vista */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Centra el div completamente */
+    width: 80%; /* Establece el ancho del contenedor */
+    height: 60%;
+    display: none; /* Oculto por defecto */
+    padding: 20px; /* Espaciado interior */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    overflow-y: auto;
+}
+
+/* Estilo para la tarjeta */
+.cardd {
+    width: 100%; /* La tarjeta ocupa el ancho completo del contenedor */
+    height: 100%;
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido que desborda */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: scale(0); /* Oculto por defecto */
+    opacity: 0; /* Opacidad 0 por defecto */
+    position: relative; /* Relativo para manejar elementos internos */
+}
+
+/* Estilo para el header de la tarjeta */
+.card-header {
+    background-color: #0077B6; /* Color de fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 15px; /* Espaciado interior */
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia entre elementos */
+    align-items: center; /* Alinea verticalmente */
+}
+
+/* Estilo para el botón de cerrar */
+.close-card-btn {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    font-size: 24px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de pointer */
+}
+
+/* Estilo para el contenido de la tarjeta */
+.card-content {
+    padding: 20px; /* Espaciado interior */
+}
+
+/* Clase para mostrar la tarjeta */
+.cardd.show {
+    transition: 0.5s ease-out;
+    transform: scale(1); /* Escala a tamaño completo */
+    opacity: 1; /* Opacidad completa */
+    top: 2%; /* Ajusta según tu diseño */
+}
+
+/* Clase para mostrar el contenedor */
+.medio-div.show {
+    display: block; /* Muestra el contenedor */
+    transition: 0.5s ease-out;
+}
+
+.contador {
+    display: flex; /* Usa flexbox para alinear elementos */
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 10px; /* Espacio entre elementos */
+    border: 1px solid #ccc; /* Borde del div */
+    padding: 10px; /* Espaciado interior */
+    width: fit-content; /* Ajusta el ancho al contenido */
+}
+
+.boton {
+    padding: 5px 10px; /* Espaciado dentro del botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.boton:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.contador-numero {
+    font-size: 1.2em; /* Tamaño de la fuente del contador */
+}
+
+.card-pets {
+    width: 70%;
+    height: 70%;
+    top: 30%;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover */
+.card-pets:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card-pets:hover .card-button {
+    opacity: 1;
+}
+
+.titulo-icono-pets {
+    top: 30%;
+    display: flex; /* Utiliza flexbox para alinear los elementos en fila */
+    align-items: center; /* Alinea verticalmente el texto e imagen en el centro */
+    gap: 10px; /* Añade espacio entre la imagen y el texto */
+    width: 100%; /* Ajusta el ancho del contenedor */
+    justify-content: space-between; /* Alinea los elementos al principio de la fila */
+}
+
+.gg-shopping-cart {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    transform: scale(var(--ggs,1));
+    width: 20px;
+    height: 21px;
+    background:
+    linear-gradient(
+    to left,currentColor 12px,
+    transparent 0)
+    no-repeat -1px 6px/18px 2px,
+    linear-gradient(
+    to left,currentColor 12px,
+    transparent 0)
+    no-repeat 6px 14px/11px 2px,
+    linear-gradient(
+    to left,currentColor 12px,
+    transparent 0)
+    no-repeat 0 2px/4px 2px,
+    radial-gradient(
+    circle,currentColor 60%,
+    transparent 40%)
+    no-repeat 12px 17px/4px 4px,
+    radial-gradient(
+    circle,currentColor 60%,
+    transparent 40%)
+    no-repeat 6px 17px/4px 4px
+   }
+   
+   .gg-shopping-cart::after,
+   .gg-shopping-cart::before {
+    content: "";
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 2px;
+    height: 14px;
+    background: currentColor;
+    top: 2px;
+    left: 4px;
+    transform: skew(12deg)
+   }
+   
+   .gg-shopping-cart::after {
+    height: 10px;
+    top: 6px;
+    left: 16px;
+    transform: skew(-12deg)
+   }
+
+.precio{
+    width: 13%;
+    right: 10%;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: rgb(61, 106, 255);
+    color: white;
+    padding: 1em 2em;
+}
+
+.precio-abajo{
+    width: 40%;
+    right: 10%;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: rgb(61, 106, 255);
+    color: white;
+    padding: 1em 2em;
+}
+
+.precio-aceptar {
+    position: absolute; /* Asegura el posicionamiento absoluto */
+    right: 1%; /* Fija el elemento a la izquierda */
+    
+    /* Otros estilos aquí */
+}
