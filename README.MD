@@ -1,4 +1,7 @@
-Integrantes:
+# Proyecto reservación de vuelos
 
-Jesús Araujo 31200562
-Rodrigo Torres 31014592
+
+**Integrantes:**
+
+- Jesús Araujo 31200562
+- Rodrigo Torres 31014592
