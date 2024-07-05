@@ -6,9 +6,10 @@ body, html {
     box-sizing: border-box;
 }
 
-.logo h1 {
+.logo {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 0.8em;
+    width: 97%;
 }
 
 body, html {
@@ -809,3 +810,43 @@ header {
     
     /* Otros estilos aquí */
 }
+
+.titulo-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between; /* Alinea los elementos al principio y al final de la fila */
+}
+
+.boton-volver {
+    --accent: rgb(61, 106, 255);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    color: rgb(61, 106, 255);
+    padding: 1em 2em;
+    transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+      letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+  }
+  
+  .boton-volver:hover {
+    box-shadow: var(--accent) 0px 0px 30px 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(61, 106, 255);
+    transform: scale(0.95);
+    border: rgb(61, 106, 255);
+    border-color: rgb (61, 106, 255);
+  }
+  
+  .boton-volver:active {
+    box-shadow: var(--accent) 0px 0px 30px 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(61, 106, 255);
+    transform: scale(0.95);
+    border: rgb(61, 106, 255);
+    border-color: rgb (61, 106, 255);
+  }

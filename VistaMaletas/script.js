@@ -476,6 +476,69 @@ document.addEventListener('DOMContentLoaded', function() {
   populateAñosDropdown();
 });
 
+// Obtener los parámetros de la URL
+const urlParams = new URLSearchParams(window.location.search);
+const ciudad = urlParams.get('ciudad');
+const precio = urlParams.get('precio');
+
+// Mostrar los datos en los elementos correspondientes
+document.getElementById('destino-ciudad').textContent = `Caracas-${ciudad}`;
+document.getElementById('precioTODO').textContent = `${precio},00USD`;
+
+
+document.getElementById("submitBtn").addEventListener("click", function(event) {
+  // Capturar los datos del formulario
+  const nombre = document.getElementById("nombre").value;
+  const apellido = document.getElementById("apellido").value;
+  const genero = document.getElementById("genero").value;
+  const dia = document.getElementById("diaDropdown").value;
+  const mes = document.getElementById("mesDropdown").value;
+  const año = document.getElementById("añoDropdown").value;
+  const nacionalidad = document.getElementById("nacionalidad").value;
+  // Destino
+  // Obtener el elemento por su id
+  const destinoCiudadElement = document.getElementById('destino-ciudad');
+
+  // Obtener el texto del elemento y separar por el guion
+  const textoCompleto = destinoCiudadElement.textContent.trim(); // Obtener el texto y eliminar espacios al inicio y final
+  const ciudad = textoCompleto.split('-')[1].trim(); // Separar por el guion y obtener la segunda parte, luego eliminar espacios al inicio y final
+  // Costo
+  const precioBaseElement = document.getElementById('precioTODO');
+  let precioBaseText = precioBaseElement.textContent.trim(); // Remueve espacios alrededor
+  precioBaseText = precioBaseText.replace(/[^\d,.-]/g, ''); // Remueve cualquier carácter no numérico excepto , y .
+  const costo = parseFloat(precioBaseText.replace(',', '.')); // Convierte el texto a número
+  console.log(precioBaseElement)
+
+  // Validar que todos los campos estén completos
+  if (!nombre || !apellido || !genero || !dia || !mes || !año || !nacionalidad) {
+      alert("Por favor complete todos los campos del formulario.");
+      event.preventDefault(); // Evitar la acción por defecto (cambiar de página)
+      return;
+  }
+
+  // Crear un objeto con los datos
+  const datos = {
+      nombre: nombre,
+      apellido: apellido,
+      genero: genero,
+      fechaNacimiento: {
+          dia: dia,
+          mes: mes,
+          año: año
+      },
+      nacionalidad: nacionalidad,
+      costo: costo,
+      destino: ciudad
+  };
+
+  // Guardar los datos en localStorage
+  localStorage.setItem("datosFormulario", JSON.stringify(datos));
+
+  // Redirigir a la página destino
+  window.location.href = "../asientosPrueba3/index.html";
+});
+
+
 
 // script.js
 

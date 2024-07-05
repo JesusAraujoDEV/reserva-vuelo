@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f5f5f5;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #004d98;
+    width: 100%;
+    height: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo h1{
+    margin: 0;
+    font-size: 1.5em;
+}
+.destinofinal {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+}
+.destinofinal .AvionBanner {
+    filter: brightness(0.5);
+    background-color: transparent;
+    height: 50.44%;
+    object-fit: cover;
+    position: absolute;
+    top: 6%;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .TextoArriba {
+    background-color: transparent;
+    color: #ffffff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 800;
+    height: auto;
+    left: 37%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 40.67%;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .TextoDestino{
+    background-color: transparent;
+    color: #004d98;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    height: auto;
+    left: 2%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 58.67%;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.destinofinal .avionArriba {
+    background-color: transparent;
+    height: 33.44%;
+    top: 5%;
+    left: 50%;
+    position: absolute;
+    width: 42.1%;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .avionAbajo{
+    background-color: transparent;
+    height: 42.56%;
+    left: -14.2%;
+    position: absolute;
+    top: 49.89%;
+    width: 64%;
+    max-width: 100%;
+    display: block;
+}
+/*Barcelona*/
+/*.destinofinal .cuadroBarcelona {
+    background-color: transparent;
+    height: 28%;
+    left: 1%;
+    position: absolute;
+    top: 49.78%;
+    width: 34.2%;
+    max-width: 100%;
+    display: block;
+}*/
+.destinofinal .SpainBarcelona {
+    background-color: transparent;
+    height: auto;
+    left: 2.6%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 95.44%;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.fuente{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+.destinofinal .imagenBarcelona {
+    background-color: transparent;
+    border-radius: 2%;
+    border: 2px solid #c3c6ce;
+    height: 35.33%;
+    left: 2%;
+    object-fit: cover;
+    position: absolute;
+    top: 62.67%;
+    width: 23.5%;
+    transition: 0.3s ease-in-out;
+}
+.imagenBarcelona:hover{
+    filter: brightness(0.5);
+}
+.comprarBoton {
+    align-items: center;
+    background-color: #004d98;
+    padding: 0.5% 0.8%;
+    border-radius: 10px;
+    position: absolute;
+    justify-content: center;
+    gap: 1%;
+    display: inline-flex;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.comprarBoton:active {
+    background-color: #DEEDFF;
+}
+.comprarBarcelonabtn {
+    top: 92.5%;
+    left: 20.5%;
+}
+.destinofinal .comprar {
+    padding:  0.28% 0.56%;
+    border: unset;
+    border-radius: 3.33%;
+    color: #ffffff;
+    cursor: inherit;
+    margin-top: -0.11%;
+    z-index: 1;
+    background: #004d98;
+    position: relative;
+    text-align: left;
+    font-weight: 1000;
+    font-size: 17px;
+    white-space: nowrap;
+    width: fit-content;
+    transition: all 250ms;
+    overflow: hidden;
+}
+.comprar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 3.33%;
+    background-color: #DEEDFF;
+    z-index: -1;
+    transition: all 250ms
+}
+.comprar:hover {
+    color: #004d98;
+}
+.comprar:hover::before {
+    width: 100%;
+}
+/*Fin pruebas*/
+.fuente2 {
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15;
+    font-style: normal;
+    font-weight: 500;
+}
+.destinofinal .precioCuadradoBarcelona{
+    align-items: center;
+    background-color: #004d98;
+    display: flex;
+    flex-direction: column;
+    gap: 1.11%;
+    height: 6.5%;
+    justify-content: center;
+    left: 22.2%;
+    padding:  0.83% 0.83%;
+    position: absolute;
+    top: 44.67%;
+    width: 4%;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.precioCuadradoBarcelona:hover{
+    opacity: 1;
+}
+
+/*Milan*/
+/*.destinofinal .cuadroMilan{
+    background-color: transparent;
+    height: 26.89%;
+    left: 32%;
+    position: absolute;
+    top: 50.9%;
+    width: 34.2%;
+    max-width: 100%;
+    display: block;
+}*/
+.destinofinal .imagenMilan{
+    background-color: transparent;
+    border-radius: 2%;
+    border: 2px solid #c3c6ce;
+    height: 35.33%;
+    left: 37.78%;
+    object-fit: cover;
+    position: absolute;
+    top:62.67%;
+    width: 23.5%;
+    max-width: 100%;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+.imagenMilan:hover{
+    filter: brightness(0.5);
+}
+.destinofinal .ItaliaMilan {
+    background-color: transparent;
+    height: auto;
+    left: 38.5%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 95.44%; 
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.comprarMilanbtn {
+    left: 56.5%;
+    top: 92.5%;
+}
+/*.destinofinal .precioCuadradoMilan{
+    align-items: center;
+    background-color: #004d98;
+    display: flex;
+    flex-direction: column;
+    gap: 1.11%;
+    height: 6.5%;
+    justify-content: center;
+    left: 52.8%;
+    padding: 0.83% 0.83%;
+    position: absolute;
+    top: 44.67%;
+    width: 4%;
+}*/
+/*Liverpool*/
+/*.destinofinal .cuadroLiverpool {
+    background-color: transparent;
+    height: 26.89%;
+    left: 62%;
+    position: absolute;
+    top: 50.9%;
+    width: 34.2%;
+    max-width: 100%;
+    display: block;
+}*/
+
+.destinofinal .imagenLiverpool {
+    background-color: transparent;
+    border-radius: 2%;
+    border: 2px solid #c3c6ce;
+    height: 35.33%;
+    left: 73.8%;
+    object-fit: cover;
+    position: absolute;
+    top: 62.67%;
+    width: 23.5%;
+    max-width: 100%;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+.imagenLiverpool:hover{
+    filter: brightness(0.5);
+}
+
+.destinofinal .InglaterraLiverpool {
+    background-color: transparent;
+    height: auto;
+    left: 74.5%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 95.44%;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.comprarLiverpoolbtn {
+    top: 92.5%;
+    left: 92.5%;
+}
+/*.destinofinal .precioCuadradoLiverpool {
+    align-items: center;
+    background-color: #004d98;
+    display: flex;
+    flex-direction: column;
+    gap: 1.11%;
+    height: 6.5%; 
+    justify-content: center;
+    left: 82.9%; 
+    padding:  0.83% 0.83%;
+    position: absolute;
+    top: 44.67%;
+    width: 4%;
+}
+*/

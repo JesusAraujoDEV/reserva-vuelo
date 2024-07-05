@@ -24,7 +24,7 @@
                 </div>
                 <div class="destino">
                     <div class="codigo">2005</div>
-                    <div class="ciudad">Barcelona</div>
+                    <div class="ciudad" id="destino-ciudad">Barcelona</div>
                 </div>
             </div>
             <div class="medio"></div>
@@ -32,7 +32,7 @@
                 <div class="facturaFila">
                     <div class="factura-item">
                         <span class="label">Pasajero</span>
-                        <p class="contenido">Lionel</p>
+                        <p class="contenido" id="nombreStatic">Lionel</p>
                     </div>
                     <div class="factura-item">
                         <span class="label">Fecha</span>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="factura-item">
                         <span class="label">Asiento</span>
-                        <p class="contenido">B30</p>
+                        <p class="contenido" id="asientoSeleccionado">B30</p>
                     </div>
                     <div class="factura-item">
                         <span class="label">Clase</span>
@@ -84,7 +84,7 @@
                 </div>
                 <div class="destino">
                     <div class="codigo">2005</div>
-                    <div class="ciudad">Barcelona</div>
+                    <div class="ciudad" id="destino-ciudad2">Barcelona</div>
                 </div>
             </div>
             <div class="medio"></div>
@@ -92,14 +92,16 @@
                 <div class="facturaFila">
                     <div class="factura-item">
                         <span class="label">Precio</span>
-                        <p class="contenido">100$</p>
+                        <p class="contenido" id="precioTODO">100$</p>
                     </div>
                     <div class="factura-item">
-                            <button class="pagarBtn">Pagar</button>
+                        <button class="pagarBtn" id="submitBtn">Pagar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

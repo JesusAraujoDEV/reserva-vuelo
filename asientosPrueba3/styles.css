@@ -18,13 +18,13 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #004d98;
-    color: white;
+    padding: 1.8%;
+    background-color: #0077B6; /* Color azul */
+    color: #FFFFFF;
     width: 100%;
-    height: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
-    position: fixed;
+    height: 1%; /* Altura fija del header */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed; /* Fija el header en la parte superior */
     top: 0;
     left: 0;
     z-index: 10;
@@ -188,9 +188,10 @@ header{
     transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
 }
 
-.logo h1{
+.logo{
     margin: 0;
-    font-size: 1.5em;
+    font-size: 0.8em;
+    width: 97%;
 }
 .confirmar-asientoBTN{
     position: relative;
@@ -414,7 +415,7 @@ ol {
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.07);
     display: flex;
     margin-top: 400px;
-    width: 20%;
+    width: 27%;
     flex-direction: column;
     white-space: nowrap;
     padding: 20px 30px 20px 15px;
@@ -470,4 +471,77 @@ ol {
 
 .selected-text {
     color: #004d98;
+}
+
+.gg-shopping-cart {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    transform: scale(var(--ggs,1));
+    width: 20px;
+    height: 21px;
+    background:
+    linear-gradient(
+    to left,currentColor 12px,
+    transparent 0)
+    no-repeat -1px 6px/18px 2px,
+    linear-gradient(
+    to left,currentColor 12px,
+    transparent 0)
+    no-repeat 6px 14px/11px 2px,
+    linear-gradient(
+    to left,currentColor 12px,
+    transparent 0)
+    no-repeat 0 2px/4px 2px,
+    radial-gradient(
+    circle,currentColor 60%,
+    transparent 40%)
+    no-repeat 12px 17px/4px 4px,
+    radial-gradient(
+    circle,currentColor 60%,
+    transparent 40%)
+    no-repeat 6px 17px/4px 4px
+   }
+   
+   .gg-shopping-cart::after,
+   .gg-shopping-cart::before {
+    content: "";
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 2px;
+    height: 14px;
+    background: currentColor;
+    top: 2px;
+    left: 4px;
+    transform: skew(12deg)
+   }
+   
+   .gg-shopping-cart::after {
+    height: 10px;
+    top: 6px;
+    left: 16px;
+    transform: skew(-12deg)
+   }
+
+.titulo-icono-confirmar{
+    display: flex; /* Utiliza flexbox para alinear los elementos en fila */
+    align-items: center; /* Alinea verticalmente el texto e imagen en el centro */
+    gap: 10px; /* Añade espacio entre la imagen y el texto */
+    width: 80%; /* Ajusta el ancho del contenedor */
+    justify-content: space-between; /* Alinea los elementos al principio de la fila */
+}
+
+.titulo-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between; /* Alinea los elementos al principio y al final de la fila */
+}
+
+.text-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
 }

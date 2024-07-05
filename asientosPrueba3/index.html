@@ -9,7 +9,14 @@
 <body>
     <header>
         <div class="logo">
-            <h1 class="fuente2">VuelosC</h1>
+            <div class="titulo-header">
+                <div class="titulo-icono">
+                    <h1>VuelosC</h1>
+                    <div class="destino">
+                        <p class="text-title" id="destino-ciudad">Caracas-Liverpool</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -22,32 +29,32 @@
             <div class="titulo-icono">
                 <div class="input-group">
                     <label class="label">Nombre</label>
-                    <div class="input-style-static">Juan</div>
+                    <div class="input-style-static" id="nombreStatic">Juan</div>
                 </div>
                 <div class="input-group">
                     <label class="label">Apellido</label>
-                    <div class="input-style-static">Pérez</div>
+                    <div class="input-style-static" id="apellidoStatic">Pérez</div>
                 </div>
                 
                 <div class="input-group">
                     <label class="label">Género</label>
-                    <div class="input-style-static">Masculino</div>
+                    <div class="input-style-static" id="generoStatic">Masculino</div>
                 </div>
             </div>
-    
+        
             <div class="titulo-icono">
                 <div class="input-group">
                     <label class="label">Fecha de Nacimiento</label>
                     <div class="input-style-static-group">
-                        <div class="input-style-static">15</div>
-                        <div class="input-style-static">Marzo</div>
-                        <div class="input-style-static">1990</div>
+                        <div class="input-style-static" id="diaStatic">15</div>
+                        <div class="input-style-static" id="mesStatic">Marzo</div>
+                        <div class="input-style-static" id="añoStatic">1990</div>
                     </div>
                 </div>
-    
+        
                 <div class="input-group">
                     <label class="label">Nacionalidad</label>
-                    <div class="input-style-static">Venezuela</div>
+                    <div class="input-style-static" id="nacionalidadStatic">Venezuela</div>
                 </div>
             </div>
         </div>
@@ -59,7 +66,7 @@
                 <div class="input-group">
                     <label class="label">Asiento seleccionado</label>
                     <div class="input-style-static-group">
-                        <div class="input-style-static2"></div>
+                        <div class="input-style-static2" id="asientoSeleccionado"></div>
                     </div>
                 </div>
                 <div class="input-group">
@@ -67,9 +74,16 @@
                     <div class="input-style-static">Ejecutiva</div>
                 </div>
             </div>
-            
+            <div class="titulo-icono-confirmar">
+                <div class="precio-abajo">
+                    <div class="titulo-icono">
+                        <div class="gg-shopping-cart"></div>
+                        <p class="precio-todo" id="precioTODO">500,00USD</p>
+                    </div>
+                </div>
+                <button class="confirmar-asientoBTN" id="submitBtn">Confirmar</button>  
+            </div>
         </div>
-        <button class="confirmar-asientoBTN">Confirmar</button>
         
     </div>
     

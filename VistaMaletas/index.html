@@ -10,9 +10,15 @@
 <body>
     <header>
         <div class="logo">
-            <h1>VuelosC</h1>
+            <div class="titulo-header">
+                <div class="titulo-icono">
+                    <h1>VuelosC</h1>
+                    <div class="destino">
+                        <p class="text-title" id="destino-ciudad">Caracas-Liverpool</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </header>
 
     <div class="input-div">
@@ -24,18 +30,16 @@
             <div class="titulo-icono">
                 <div class="input-group">
                     <label class="label">Nombre</label>
-                    <input autocomplete="off" class="input-style" type="text">
-                    <div></div>
+                    <input id="nombre" autocomplete="off" class="input-style" type="text">
                 </div>
                 <div class="input-group">
                     <label class="label">Apellido</label>
-                    <input autocomplete="off" class="input-style" type="text">
-                    <div></div>
+                    <input id="apellido" autocomplete="off" class="input-style" type="text">
                 </div>
                 
                 <div class="input-group">
                     <label class="label">Género</label>
-                    <select class="input-style-select">
+                    <select id="genero" class="input-style-select">
                         <option value="" disabled selected>Elija una opción</option>
                         <option value="masculino">Masculino</option>
                         <option value="femenino">Femenino</option>
@@ -43,28 +47,40 @@
                     </select>
                 </div>
             </div>
-
+        
             <div class="titulo-icono">
                 <div class="input-group">
                     <label class="label">Fecha de Nacimiento</label>
                     <div class="input-style-group">
                         <select id="diaDropdown" class="input-style-select">
                             <option value="" disabled selected>Día</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <!-- ... hasta 31 -->
                         </select>
                     
                         <select id="mesDropdown" class="input-style-select">
                             <option value="" disabled selected>Mes</option>
+                            <option value="enero">Enero</option>
+                            <option value="febrero">Febrero</option>
+                            <option value="marzo">Marzo</option>
+                            <!-- ... hasta diciembre -->
                         </select>
                     
                         <select id="añoDropdown" class="input-style-select">
                             <option value="" disabled selected>Año</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <!-- ... hasta el año que desees -->
                         </select>
                     </div>
                 </div>
-
+        
                 <div class="input-group">
                     <label class="label">Nacionalidad</label>
-                    <select class="input-style-select" id="nacionalidadSelect">
+                    <select id="nacionalidad" class="input-style-select">
                         <option value="" disabled selected>Elija una opción</option>
                         <option value="venezuela">Venezuela</option>
                         <option value="colombia">Colombia</option>
@@ -112,7 +128,7 @@
             <div class="card">
                 <div class="card-details">
                     <div class="titulo-icono">
-                        <img src="maleta.png" alt="imagen de una maleta" class="img-clase">
+                        <img src="/VistaMaletas/img/maleta.png" alt="imagen de una maleta" class="img-clase">
                         <p class="text-title">Equipaje de mano y bodega</p>
                     </div>
                 </div>
@@ -137,7 +153,7 @@
             <div class="card">
                 <div class="card-details">
                     <div class="titulo-icono">
-                        <img src="pets.png" alt="imagen de una maleta" class="img-clase">
+                        <img src="/VistaMaletas/img/pets.png" alt="imagen de una maleta" class="img-clase">
                         <p class="text-title">Mascotas</p>
                     </div>
                 </div>
@@ -165,7 +181,7 @@
             </div>
             <div class="titulo-icono-pets">
                 <div class="card-pets">
-                    <img src="smallpet.png" alt="imagen de una maleta" class="img-clase">
+                    <img src="/VistaMaletas/img/smallpet.png" alt="imagen de una maleta" class="img-clase">
                     <p class="text-title">Pequeña (<= 8kg)</p>
                     <div class="descripcion-text-mascotas">
                         <p class="text-body">USD 150,<span class="decimales">00</span></p>
@@ -178,7 +194,7 @@
                 </div>
     
                 <div class="card-pets">
-                    <img src="medianpet.png" alt="imagen de una maleta" class="img-clase">
+                    <img src="/VistaMaletas/img/medianpet.png" alt="imagen de una maleta" class="img-clase">
                     <p class="text-title">Mediana (8-15kg)</p>
                     <div class="descripcion-text-mascotas">
                         <p class="text-body">USD 250,<span class="decimales">00</span></p>
@@ -191,7 +207,7 @@
                 </div>
     
                 <div class="card-pets">
-                    <img src="bigpet.png" alt="imagen de una maleta" class="img-clase">
+                    <img src="/VistaMaletas/img/bigpet.png" alt="imagen de una maleta" class="img-clase">
                     <p class="text-title">Grande (15-30kg)</p>
                     <div class="descripcion-text-mascotas">
                         <p class="text-body">USD 350,<span class="decimales">00</span></p>
@@ -210,13 +226,16 @@
 
     <div class="button-div">
         <div class="titulo-icono">
+            <div class="destino">
+                <p class="destino-ciudad" id="destino-ciudad">Caracas-Liverpool</p>
+            </div>
             <div class="precio-abajo">
                 <div class="titulo-icono">
                     <div class="gg-shopping-cart"></div>
                     <p class="precio-todo" id="precioTODO">500,00USD</p>
                 </div>
             </div>
-            <button class="asientos-button">Elegir asientos</button>
+            <button class="asientos-button" id="submitBtn">Elegir asientos</button>
         </div>
     </div>
 
