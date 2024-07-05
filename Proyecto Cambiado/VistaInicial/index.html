@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+</head>s
 <body>
     <header>
         <div class="logo">
@@ -13,7 +13,6 @@
         </div>
     </header>
     <div class="destinofinal">
-        <img class="avionArriba" src="img/avionarriba.png" alt="avionArriba">
         <img class="AvionBanner" src="img/avionprincipal.jpg" alt="AvionPrincipal">
         <div class="TextoArriba">¡Bienvenido a VuelosC!</div>
         <div class="TextoDestino">Descubre nuestros destinos</div>
@@ -23,7 +22,7 @@
             <img class="imagenBarcelona" src="img/barcelonaciudad.jpg" alt="BarcelonaCiudad">
             <div class="SpainBarcelona fuente2">España, Barcelona</div>
             <div class="comprarBoton comprarBarcelonabtn">
-                <button class="comprar fuente2" onclick="verDestino('Barcelona', 800)">Ver</button>
+                <button class="comprar fuente2" id="openBarcelonaButton">Ver</button>
             </div>
         </div>
 
@@ -32,7 +31,7 @@
             <img class="imagenMilan" src="img/milanciudad.jpg" alt="MilanCiudad">
             <div class="ItaliaMilan fuente2">Italia, Milán</div>
             <div class="comprarBoton comprarMilanbtn">
-                <button class="comprar fuente2" onclick="verDestino('Milán', 750)">Ver</button>
+                <button class="comprar fuente2" id="openMilanButton">Ver</button>
             </div>
         </div>
 
@@ -41,7 +40,31 @@
             <img class="imagenLiverpool" src="img/liverpoolciudad.jpg" alt="LiverpoolCiudad">
             <div class="InglaterraLiverpool fuente2">Inglaterra, Liverpool</div>
             <div class="comprarBoton comprarLiverpoolbtn">
-                <button class="comprar fuente2" onclick="verDestino('Liverpool', 950)">Ver</button>
+                <button class="comprar fuente2" id="openLiverpoolButton">Ver</button>
+            </div>
+        </div>
+    </div>
+    <div class="medio-div" id="cardContainer">
+        <div id="cardd" class="cardd">
+            <div class="card-header">
+                <h3>Fechas</h3>
+                <button id="closeCardButton" class="close-card-btn">&times;</button>
+            </div>
+            <div class="card-body">
+                <div class="titulo-icono-pets">
+                    <div class="card-pets">
+                        <form id="dateForm">
+                            <label for="dateSelect">Seleccione una fecha:</label>
+                            <select id="dateSelect" name="dateSelect" required>
+                                <option value="" disabled selected>Seleccione una fecha</option>
+                                <option value="2024-07-24">24 de julio del 2024</option>
+                                <option value="2024-12-17">17 de diciembre del 2024</option>
+                                <option value="2025-02-02">2 de febrero del 2025</option>
+                            </select>
+                            <button type="submit" class="comprar fuente2">Seguir</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

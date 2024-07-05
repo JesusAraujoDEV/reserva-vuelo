@@ -18,7 +18,21 @@ header{
     left: 0;
     z-index: 10;
 }
-
+/*Fuentes*/
+.fuente{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+.fuente2 {
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15;
+    font-style: normal;
+    font-weight: 500;
+}
 .logo h1{
     margin: 0;
     font-size: 1.5em;
@@ -83,38 +97,7 @@ header{
     max-width: 100%;
     display: block;
 }
-
-.destinofinal .avionArriba {
-    background-color: transparent;
-    height: 33.44%;
-    top: 5%;
-    left: 50%;
-    position: absolute;
-    width: 42.1%;
-    max-width: 100%;
-    display: block;
-}
-.destinofinal .avionAbajo{
-    background-color: transparent;
-    height: 42.56%;
-    left: -14.2%;
-    position: absolute;
-    top: 49.89%;
-    width: 64%;
-    max-width: 100%;
-    display: block;
-}
 /*Barcelona*/
-/*.destinofinal .cuadroBarcelona {
-    background-color: transparent;
-    height: 28%;
-    left: 1%;
-    position: absolute;
-    top: 49.78%;
-    width: 34.2%;
-    max-width: 100%;
-    display: block;
-}*/
 .destinofinal .SpainBarcelona {
     background-color: transparent;
     height: auto;
@@ -128,13 +111,6 @@ header{
     width: auto;
     max-width: 100%;
     display: block;
-}
-.fuente{
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
 }
 .destinofinal .imagenBarcelona {
     background-color: transparent;
@@ -151,6 +127,11 @@ header{
 .imagenBarcelona:hover{
     filter: brightness(0.5);
 }
+.comprarBarcelonabtn {
+    top: 92.5%;
+    left: 20.5%;
+}
+/*ComprarBotón*/
 .comprarBoton {
     align-items: center;
     background-color: #004d98;
@@ -166,10 +147,6 @@ header{
 }
 .comprarBoton:active {
     background-color: #DEEDFF;
-}
-.comprarBarcelonabtn {
-    top: 92.5%;
-    left: 20.5%;
 }
 .destinofinal .comprar {
     padding:  0.28% 0.56%;
@@ -207,14 +184,7 @@ header{
 .comprar:hover::before {
     width: 100%;
 }
-/*Fin pruebas*/
-.fuente2 {
-    color: white;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 15;
-    font-style: normal;
-    font-weight: 500;
-}
+/*Fin ComprarBotón*/
 .destinofinal .precioCuadradoBarcelona{
     align-items: center;
     background-color: #004d98;
@@ -232,21 +202,7 @@ header{
     transition: 0.3s ease-in-out;
 }
 
-.precioCuadradoBarcelona:hover{
-    opacity: 1;
-}
-
 /*Milan*/
-/*.destinofinal .cuadroMilan{
-    background-color: transparent;
-    height: 26.89%;
-    left: 32%;
-    position: absolute;
-    top: 50.9%;
-    width: 34.2%;
-    max-width: 100%;
-    display: block;
-}*/
 .destinofinal .imagenMilan{
     background-color: transparent;
     border-radius: 2%;
@@ -282,32 +238,8 @@ header{
     left: 56.5%;
     top: 92.5%;
 }
-/*.destinofinal .precioCuadradoMilan{
-    align-items: center;
-    background-color: #004d98;
-    display: flex;
-    flex-direction: column;
-    gap: 1.11%;
-    height: 6.5%;
-    justify-content: center;
-    left: 52.8%;
-    padding: 0.83% 0.83%;
-    position: absolute;
-    top: 44.67%;
-    width: 4%;
-}*/
-/*Liverpool*/
-/*.destinofinal .cuadroLiverpool {
-    background-color: transparent;
-    height: 26.89%;
-    left: 62%;
-    position: absolute;
-    top: 50.9%;
-    width: 34.2%;
-    max-width: 100%;
-    display: block;
-}*/
 
+/*Liverpool*/
 .destinofinal .imagenLiverpool {
     background-color: transparent;
     border-radius: 2%;
@@ -344,18 +276,147 @@ header{
     top: 92.5%;
     left: 92.5%;
 }
-/*.destinofinal .precioCuadradoLiverpool {
-    align-items: center;
-    background-color: #004d98;
+
+/*Pruebassss*/
+
+/* Estilo base para el contenedor de la tarjeta */
+.medio-div {
+    position: fixed; /* Cambia a fixed para que se mantenga en la vista */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Centra el div completamente */
+    width: 80%; /* Establece el ancho del contenedor */
+    height: 60%;
+    display: none; /* Oculto por defecto */
+    padding: 20px; /* Espaciado interior */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    overflow-y: auto;
+}
+/* Estilo para la tarjeta */
+.cardd {
+    width: 100%; /* La tarjeta ocupa el ancho completo del contenedor */
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido que desborda */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: scale(0); /* Oculto por defecto */
+    opacity: 0; /* Opacidad 0 por defecto */
+    position: relative; /* Relativo para manejar elementos internos */
+}
+
+/* Estilo para el header de la tarjeta */
+.card-header {
+    background-color: #0077B6; /* Color de fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 15px; /* Espaciado interior */
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia entre elementos */
+    align-items: center; /* Alinea verticalmente */
+}
+/* Estilo para el botón de cerrar */
+.close-card-btn {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    font-size: 24px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de pointer */
+}
+.titulo-icono-pets {
+    top: 30%;
+    display: flex; /* Utiliza flexbox para alinear los elementos en fila */
+    align-items: center; /* Alinea verticalmente el texto e imagen en el centro */
+    gap: 10px; /* Añade espacio entre la imagen y el texto */
+    width: 100%; /* Ajusta el ancho del contenedor */
+    justify-content: space-between; /* Alinea los elementos al principio de la fila */
+}
+.card-pets {
+    width: 70%;
+    height: 70%;
+    top: 30%;
+    left: 15%;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
     display: flex;
     flex-direction: column;
-    gap: 1.11%;
-    height: 6.5%; 
+    align-items: center;
     justify-content: center;
-    left: 82.9%; 
-    padding:  0.83% 0.83%;
-    position: absolute;
-    top: 44.67%;
-    width: 4%;
 }
-*/
+
+/* Hover */
+.card-pets:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card-pets:hover .card-button {
+    opacity: 1;
+}
+.text-body {
+    color: rgb(134, 134, 134);
+}
+.contador {
+    display: flex; /* Usa flexbox para alinear elementos */
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 10px; /* Espacio entre elementos */
+    border: 1px solid #ccc; /* Borde del div */
+    padding: 10px; /* Espaciado interior */
+    width: fit-content; /* Ajusta el ancho al contenido */
+}
+.medio-div.show {
+    display: block; /* Cambia de none a block para mostrar */
+}
+
+.cardd.show {
+    transform: scale(1); /* Cambia de scale(0) a scale(1) para mostrar */
+    opacity: 1; /* Cambia de opacity 0 a 1 para mostrar */
+}
+.card-body {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Si quieres que los elementos se apilen verticalmente */
+    height: 100%; /* Asegúrate de que el contenedor tenga una altura para centrar verticalmente */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #004d98;
+    font-weight: bold;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+button[type="submit"] {
+    background-color: #004d98;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #003366;
+}
