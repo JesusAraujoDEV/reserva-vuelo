@@ -1,0 +1,422 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f5f5f5;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #004d98;
+    width: 100%;
+    height: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+/*Fuentes*/
+.fuente{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+.fuente2 {
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15;
+    font-style: normal;
+    font-weight: 500;
+}
+.logo h1{
+    margin: 0;
+    font-size: 1.5em;
+}
+.destinofinal {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+}
+.destinofinal .AvionBanner {
+    filter: brightness(0.5);
+    background-color: transparent;
+    height: 50.44%;
+    object-fit: cover;
+    position: absolute;
+    top: 6%;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .TextoArriba {
+    background-color: transparent;
+    color: #ffffff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 800;
+    height: auto;
+    left: 37%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 40.67%;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .TextoDestino{
+    background-color: transparent;
+    color: #004d98;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    height: auto;
+    left: 2%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 58.67%;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+/*Barcelona*/
+.destinofinal .SpainBarcelona {
+    background-color: transparent;
+    height: auto;
+    left: 2.6%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 95.44%;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.destinofinal .imagenBarcelona {
+    background-color: transparent;
+    border-radius: 2%;
+    border: 2px solid #c3c6ce;
+    height: 35.33%;
+    left: 2%;
+    object-fit: cover;
+    position: absolute;
+    top: 62.67%;
+    width: 23.5%;
+    transition: 0.3s ease-in-out;
+}
+.imagenBarcelona:hover{
+    filter: brightness(0.5);
+}
+.comprarBarcelonabtn {
+    top: 92.5%;
+    left: 20.5%;
+}
+/*ComprarBotón*/
+.comprarBoton {
+    align-items: center;
+    background-color: #004d98;
+    padding: 0.5% 0.8%;
+    border-radius: 10px;
+    position: absolute;
+    justify-content: center;
+    gap: 1%;
+    display: inline-flex;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.comprarBoton:active {
+    background-color: #DEEDFF;
+}
+.destinofinal .comprar {
+    padding:  0.28% 0.56%;
+    border: unset;
+    border-radius: 3.33%;
+    color: #ffffff;
+    cursor: inherit;
+    margin-top: -0.11%;
+    z-index: 1;
+    background: #004d98;
+    position: relative;
+    text-align: left;
+    font-weight: 1000;
+    font-size: 17px;
+    white-space: nowrap;
+    width: fit-content;
+    transition: all 250ms;
+    overflow: hidden;
+}
+.comprar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 3.33%;
+    background-color: #DEEDFF;
+    z-index: -1;
+    transition: all 250ms
+}
+.comprar:hover {
+    color: #004d98;
+}
+.comprar:hover::before {
+    width: 100%;
+}
+/*Fin ComprarBotón*/
+.destinofinal .precioCuadradoBarcelona{
+    align-items: center;
+    background-color: #004d98;
+    display: flex;
+    flex-direction: column;
+    gap: 1.11%;
+    height: 6.5%;
+    justify-content: center;
+    left: 22.2%;
+    padding:  0.83% 0.83%;
+    position: absolute;
+    top: 44.67%;
+    width: 4%;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+/*Milan*/
+.destinofinal .imagenMilan{
+    background-color: transparent;
+    border-radius: 2%;
+    border: 2px solid #c3c6ce;
+    height: 35.33%;
+    left: 37.78%;
+    object-fit: cover;
+    position: absolute;
+    top:62.67%;
+    width: 23.5%;
+    max-width: 100%;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+.imagenMilan:hover{
+    filter: brightness(0.5);
+}
+.destinofinal .ItaliaMilan {
+    background-color: transparent;
+    height: auto;
+    left: 38.5%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 95.44%; 
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.comprarMilanbtn {
+    left: 56.5%;
+    top: 92.5%;
+}
+
+/*Liverpool*/
+.destinofinal .imagenLiverpool {
+    background-color: transparent;
+    border-radius: 2%;
+    border: 2px solid #c3c6ce;
+    height: 35.33%;
+    left: 73.8%;
+    object-fit: cover;
+    position: absolute;
+    top: 62.67%;
+    width: 23.5%;
+    max-width: 100%;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+.imagenLiverpool:hover{
+    filter: brightness(0.5);
+}
+
+.destinofinal .InglaterraLiverpool {
+    background-color: transparent;
+    height: auto;
+    left: 74.5%;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    position: absolute;
+    text-align: left;
+    top: 95.44%;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+.comprarLiverpoolbtn {
+    top: 92.5%;
+    left: 92.5%;
+}
+
+/*Pruebassss*/
+
+/* Estilo base para el contenedor de la tarjeta */
+.medio-div {
+    position: fixed; /* Cambia a fixed para que se mantenga en la vista */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Centra el div completamente */
+    width: 80%; /* Establece el ancho del contenedor */
+    height: 60%;
+    display: none; /* Oculto por defecto */
+    padding: 20px; /* Espaciado interior */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    overflow-y: auto;
+}
+/* Estilo para la tarjeta */
+.cardd {
+    width: 100%; /* La tarjeta ocupa el ancho completo del contenedor */
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido que desborda */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: scale(0); /* Oculto por defecto */
+    opacity: 0; /* Opacidad 0 por defecto */
+    position: relative; /* Relativo para manejar elementos internos */
+}
+
+/* Estilo para el header de la tarjeta */
+.card-header {
+    background-color: #0077B6; /* Color de fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 15px; /* Espaciado interior */
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia entre elementos */
+    align-items: center; /* Alinea verticalmente */
+}
+/* Estilo para el botón de cerrar */
+.close-card-btn {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    font-size: 24px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de pointer */
+}
+.titulo-icono-pets {
+    top: 30%;
+    display: flex; /* Utiliza flexbox para alinear los elementos en fila */
+    align-items: center; /* Alinea verticalmente el texto e imagen en el centro */
+    gap: 10px; /* Añade espacio entre la imagen y el texto */
+    width: 100%; /* Ajusta el ancho del contenedor */
+    justify-content: space-between; /* Alinea los elementos al principio de la fila */
+}
+.card-pets {
+    width: 70%;
+    height: 70%;
+    top: 30%;
+    left: 15%;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover */
+.card-pets:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card-pets:hover .card-button {
+    opacity: 1;
+}
+.text-body {
+    color: rgb(134, 134, 134);
+}
+.contador {
+    display: flex; /* Usa flexbox para alinear elementos */
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 10px; /* Espacio entre elementos */
+    border: 1px solid #ccc; /* Borde del div */
+    padding: 10px; /* Espaciado interior */
+    width: fit-content; /* Ajusta el ancho al contenido */
+}
+.medio-div.show {
+    display: block; /* Cambia de none a block para mostrar */
+}
+
+.cardd.show {
+    transform: scale(1); /* Cambia de scale(0) a scale(1) para mostrar */
+    opacity: 1; /* Cambia de opacity 0 a 1 para mostrar */
+}
+.card-body {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Si quieres que los elementos se apilen verticalmente */
+    height: 100%; /* Asegúrate de que el contenedor tenga una altura para centrar verticalmente */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #004d98;
+    font-weight: bold;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+button[type="submit"] {
+    background-color: #004d98;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #003366;
+}

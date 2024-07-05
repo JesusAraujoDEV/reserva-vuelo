@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Vuelos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="titulo-header">
+                <div class="titulo-icono">
+                    <h1>VuelosC</h1>
+                    <div class="destino">
+                        <p class="text-title" id="destino-ciudad">Caracas-Liverpool</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="input-div">
+        <div class="datos-div">
+            <div class="text-container">
+                <span class="texto-persona">Adulto 1:</span>
+            </div>
+
+            <div class="titulo-icono">
+                <div class="input-group">
+                    <label class="label">Nombre</label>
+                    <input id="nombre" autocomplete="off" class="input-style" type="text">
+                </div>
+                <div class="input-group">
+                    <label class="label">Apellido</label>
+                    <input id="apellido" autocomplete="off" class="input-style" type="text">
+                </div>
+                
+                <div class="input-group">
+                    <label class="label">Género</label>
+                    <select id="genero" class="input-style-select">
+                        <option value="" disabled selected>Elija una opción</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div class="titulo-icono">
+                <div class="input-group">
+                    <label class="label">Fecha de Nacimiento</label>
+                    <div class="input-style-group">
+                        <select id="diaDropdown" class="input-style-select">
+                            <option value="" disabled selected>Día</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <!-- ... hasta 31 -->
+                        </select>
+                    
+                        <select id="mesDropdown" class="input-style-select">
+                            <option value="" disabled selected>Mes</option>
+                            <option value="enero">Enero</option>
+                            <option value="febrero">Febrero</option>
+                            <option value="marzo">Marzo</option>
+                            <!-- ... hasta diciembre -->
+                        </select>
+                    
+                        <select id="añoDropdown" class="input-style-select">
+                            <option value="" disabled selected>Año</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <!-- ... hasta el año que desees -->
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="input-group">
+                    <label class="label">Nacionalidad</label>
+                    <select id="nacionalidad" class="input-style-select">
+                        <option value="" disabled selected>Elija una opción</option>
+                        <option value="venezuela">Venezuela</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="estados unidos">Estados Unidos</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="datos-div-titular">
+            <div class="text-container">
+                <span class="texto-persona">Titular de la reserva</span>
+            </div>
+            <div class="titulo-icono">
+                <div class="input-group">
+                    <label class="label">Prefijo</label>
+                    <select id="prefijosDropdown" class="input-style-select">
+                        <option value="" disabled selected>Elija una opción</option>
+                        <!-- Las opciones se añadirán aquí dinámicamente -->
+                    </select>
+                </div>
+    
+                <div class="input-group">
+                    <label class="label">Teléfono</label>
+                    <input placeholder="Número telefónico" autocomplete="off" class="input-style" type="text">
+                    <div></div>
+                </div>
+            </div>
+
+            <div class="input-group-email">
+                <label class="label">Correo Electrónico</label>
+                <input placeholder="corre@mail.com" autocomplete="off" class="input-style-email" type="email">
+                <div></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="equipajes">
+        <div class="text-container">
+            <span class="pretty-text">Personaliza tu viaje</span>
+        </div>
+        
+        <div class="cards">
+            <div class="card">
+                <div class="card-details">
+                    <div class="titulo-icono">
+                        <img src="/VistaMaletas/img/maleta.png" alt="imagen de una maleta" class="img-clase">
+                        <p class="text-title">Equipaje de mano y bodega</p>
+                    </div>
+                </div>
+                <div class="descripcion-text">
+                    <p class="text-body">Revisa el equipaje incluido en la tarifa y añade el que necesite</p>
+                </div>
+
+                <div class="desde-text">
+                    <p class="text-body">Desde</p>
+                </div>
+                <div class="titulo-icono">
+                    <p class="precio-titulo">USD 70,<span class="decimales">00</span></p>
+                    <div class="contador">
+                        <button class="boton menos-button">-</button>
+                        <span class="contador-numero" data-tipo="maleta">0</span>
+                        <button class="boton mas-button" data-tipo="maleta">+</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-details">
+                    <div class="titulo-icono">
+                        <img src="/VistaMaletas/img/pets.png" alt="imagen de una maleta" class="img-clase">
+                        <p class="text-title">Mascotas</p>
+                    </div>
+                </div>
+                <div class="descripcion-text">
+                    <p class="text-body">Vuela con tus compañeros fieles a cualquier destino</p>
+                </div>
+
+                <div class="desde-text">
+                    <p class="text-body">Desde</p>
+                </div>
+                <div class="titulo-icono">
+                    <p class="precio-titulo">USD 150,<span class="decimales">00</span></p>
+                    <button class="comprar-button" id="openMascotaButton">Comprar</button>
+                </div>
+            </div>
+
+        </div>      
+    </div>
+
+    <div class="medio-div" id="cardContainer">
+        <div id="cardd" class="cardd">
+            <div class="card-header">
+                <h3>Destino</h3>
+                <button id="closeCardButton" class="close-card-btn">&times;</button>
+            </div>
+            <div class="titulo-icono-pets">
+                <div class="card-pets">
+                    <img src="/VistaMaletas/img/smallpet.png" alt="imagen de una maleta" class="img-clase">
+                    <p class="text-title">Pequeña (<= 8kg)</p>
+                    <div class="descripcion-text-mascotas">
+                        <p class="text-body">USD 150,<span class="decimales">00</span></p>
+                    </div>
+                    <div class="contador">
+                        <button class="boton menos-button">-</button>
+                        <span class="contador-numero" data-tipo="chico">0</span>
+                        <button class="boton mas-button" data-tipo="chico">+</button>
+                    </div>
+                </div>
+    
+                <div class="card-pets">
+                    <img src="/VistaMaletas/img/medianpet.png" alt="imagen de una maleta" class="img-clase">
+                    <p class="text-title">Mediana (8-15kg)</p>
+                    <div class="descripcion-text-mascotas">
+                        <p class="text-body">USD 250,<span class="decimales">00</span></p>
+                    </div>
+                    <div class="contador">
+                        <button class="boton menos-button">-</button>
+                        <span class="contador-numero" data-tipo="mediano">0</span>
+                        <button class="boton mas-button" data-tipo="mediano">+</button>
+                    </div>
+                </div>
+    
+                <div class="card-pets">
+                    <img src="/VistaMaletas/img/bigpet.png" alt="imagen de una maleta" class="img-clase">
+                    <p class="text-title">Grande (15-30kg)</p>
+                    <div class="descripcion-text-mascotas">
+                        <p class="text-body">USD 350,<span class="decimales">00</span></p>
+                    </div>
+                    <div class="contador">
+                        <button class="boton menos-button">-</button>
+                        <span class="contador-numero" data-tipo="grande">0</span>
+                        <button class="boton mas-button" data-tipo="grande">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="button-div">
+        <div class="titulo-icono">
+            <div class="precio-abajo">
+                <div class="titulo-icono">
+                    <div class="gg-shopping-cart"></div>
+                    <p class="precio-todo" id="precioTODO">500,00USD</p>
+                </div>
+            </div>
+            <button class="asientos-button" id="submitBtn">Elegir asientos</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
