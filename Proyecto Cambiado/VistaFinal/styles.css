@@ -1,0 +1,222 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #004d98;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.fuente2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.paseAbordo-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 80px; /* Para dejar espacio para el header */
+}
+
+.paseAbordo {
+    position: relative;
+    width: 320px;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.08));
+}
+
+.paseAbordo .factura {
+    display: flex;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.paseAbordo .factura.factura2 {
+    text-align: center;
+    justify-content: space-between;
+    border-radius: 16px 16px 0 0;
+}
+
+.paseAbordo .factura.factura2 .codigo {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.paseAbordo .factura.factura2 .ciudad {
+    font-size: 10px;
+    color: #004d98;
+}
+
+.avion {
+    height: 70%;
+    width: 40%;
+}
+
+.vueloM {
+    position: relative;
+    height: 50px;
+    width: 100px;
+    top: 12px;
+    background-color: #004c9800;
+    border-radius: 100% 100% 0 0 / 100% 100% 0 0;
+    border: 2px dashed transparent;
+    border-top-color: #c7ecee;
+}
+
+.vueloM::before {
+    content: "";
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    top: 14px;
+    left: 5px;
+    background-color: #004d98;
+    border-radius: 50%;
+    box-shadow: 80px 0 0 #004d98;
+}
+
+.vueloM i {
+    position: relative;
+    top: -11px;
+    color: #004d98;
+}
+
+.paseAbordo .factura.facturaAbajo {
+    flex-direction: column;
+    border-radius: 0 0 16px 16px;
+}
+
+.paseAbordo .factura.facturaAbajo .facturaFila {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paseAbordo .factura.facturaAbajo .facturaFila:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.paseAbordo .factura.facturaAbajo .label {
+    font-size: 10px;
+    color: #004d98;
+    font-weight: 500;
+}
+
+.paseAbordo .factura.facturaAbajo .contenido {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.medio {
+    height: 24px;
+    margin: 0 auto;
+    background-image: radial-gradient(circle, transparent 72%, #ffffff 72%), repeating-linear-gradient(90deg, #ffffff 0, #ffffff 2%, #c7ecee 2%, #c7ecee 4%), linear-gradient(#ffffff, #ffffff), radial-gradient(circle, transparent 72%, #ffffff 72%);
+    background-size: 24px 24px, calc(100% - 24px) 1px, calc(100% - 24px) 100%, 24px 24px;
+    background-position: -12px 0, 12px 50%, 12px 0, calc(100% + 12px) 0;
+    background-repeat: no-repeat;
+}
+
+
+.pagarBtn {
+    --accent: rgb(61, 106, 255);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: rgb(61, 106, 255);
+    cursor: pointer;
+    color: white;
+    padding: 1em 2em;
+    transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+    letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+}
+.pagarBtn:hover {
+    box-shadow: var(--accent) 0px 0px 30px 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(61, 106, 255);
+    transform: scale(0.95);
+    border: rgb(61, 106, 255);
+    border-color: rgb (61, 106, 255);
+}
+
+.pagarBtn:active {
+    box-shadow: var(--accent) 0px 0px 30px 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(61, 106, 255);
+    transform: scale(0.95);
+    border: rgb(61, 106, 255);
+    border-color: rgb (61, 106, 255);
+}
+
+.gg-shopping-cart {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    transform: scale(var(--ggs,1));
+    width: 20px;
+    height: 21px;
+    background:
+    linear-gradient(
+    to left,currentColor 12px,
+    transparent 0)
+    no-repeat -1px 6px/18px 2px,
+    linear-gradient(
+    to left,currentColor 12px,
+    transparent 0)
+    no-repeat 6px 14px/11px 2px,
+    linear-gradient(
+    to left,currentColor 12px,
+    transparent 0)
+    no-repeat 0 2px/4px 2px,
+    radial-gradient(
+    circle,currentColor 60%,
+    transparent 40%)
+    no-repeat 12px 17px/4px 4px,
+    radial-gradient(
+    circle,currentColor 60%,
+    transparent 40%)
+    no-repeat 6px 17px/4px 4px
+   }
+   
+   .gg-shopping-cart::after,
+   .gg-shopping-cart::before {
+    content: "";
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 2px;
+    height: 14px;
+    background: currentColor;
+    top: 2px;
+    left: 4px;
+    transform: skew(12deg)
+   }
+   
+   .gg-shopping-cart::after {
+    height: 10px;
+    top: 6px;
+    left: 16px;
+    transform: skew(-12deg)
+   }

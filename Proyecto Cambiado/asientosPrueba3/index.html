@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="titulo-header">
+                <div class="titulo-icono">
+                    <h1>VuelosC</h1>
+                    <div class="destino">
+                        <p class="text-title" id="destino-ciudad">Caracas-Liverpool</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="input-div">
+        <div class="datos-div">
+            <div class="text-container">
+                <span class="texto-persona">Adulto 1:</span>
+            </div>
+    
+            <div class="titulo-icono">
+                <div class="input-group">
+                    <label class="label">Nombre</label>
+                    <div class="input-style-static" id="nombreStatic">Juan</div>
+                </div>
+                <div class="input-group">
+                    <label class="label">Apellido</label>
+                    <div class="input-style-static" id="apellidoStatic">Pérez</div>
+                </div>
+                
+                <div class="input-group">
+                    <label class="label">Género</label>
+                    <div class="input-style-static" id="generoStatic">Masculino</div>
+                </div>
+            </div>
+        
+            <div class="titulo-icono">
+                <div class="input-group">
+                    <label class="label">Fecha de Nacimiento</label>
+                    <div class="input-style-static-group">
+                        <div class="input-style-static" id="diaStatic">15</div>
+                        <div class="input-style-static" id="mesStatic">Marzo</div>
+                        <div class="input-style-static" id="añoStatic">1990</div>
+                    </div>
+                </div>
+        
+                <div class="input-group">
+                    <label class="label">Nacionalidad</label>
+                    <div class="input-style-static" id="nacionalidadStatic">Venezuela</div>
+                </div>
+            </div>
+        </div>
+        <div class="datos-div-Asientos">
+            <div class="text-container">
+                <span class="texto-persona">Reserva Asientos: </span>
+            </div>
+            <div class="titulo-icono">
+                <div class="input-group">
+                    <label class="label">Asiento seleccionado</label>
+                    <div class="input-style-static-group">
+                        <div class="input-style-static2" id="asientoSeleccionado"></div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label class="label">Clase</label>
+                    <div class="input-style-static">Ejecutiva</div>
+                </div>
+            </div>
+            <div class="titulo-icono-confirmar">
+                <div class="precio-abajo">
+                    <div class="titulo-icono">
+                        <div class="gg-shopping-cart"></div>
+                        <p class="precio-todo" id="precioTODO">500,00USD</p>
+                    </div>
+                </div>
+                <button class="confirmar-asientoBTN" id="submitBtn">Confirmar</button>  
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="plane">
+        <div class="cockpit"></div>
+        <div class="exit exit--front fuselage"></div>
+        <ol class="cabin fuselage">
+            <li class="row row--30">
+                <!-- Agrupación de las columnas A y B -->
+                <div class="seats-group">
+                    <div class="aisle"></div>
+                    <div class="aisle"></div>
+                    <div class="aisle"></div>
+                    <div class="aisle2"></div>
+                    <!-- Agrupación de las columnas CDEFG -->
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="30C" />
+                            <label for="30C">30C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" disabled id="30D" />
+                            <label for="30D">Ocupado</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="30E" />
+                            <label for="30E">30E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="30F" />
+                            <label for="30F">30F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="30G" />
+                            <label for="30G">30G</label>
+                        </li>
+                    </ol>
+                    <!-- Espacio entre grupos -->
+                    <div class="aisle"></div>
+                    
+                </div>
+            </li>
+            <!-- Nueva fila con el número 31 -->
+            <li class="row row--31">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="31A" />
+                            <label for="31A">31A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="31B" />
+                            <label for="31B">31B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="31C" />
+                            <label for="31C">31C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="31D" />
+                            <label for="31D">31D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="31E" />
+                            <label for="31E">31E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="31F" />
+                            <label for="31F">31F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="31G" />
+                            <label for="31G">31G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="31H" />
+                            <label for="31H">31H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="31J" />
+                            <label for="31J">31J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!-- Nueva fila con el número 32 -->
+            <li class="row row--32">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="32A" />
+                            <label for="32A">32A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="32B" />
+                            <label for="32B">32B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="32C" />
+                            <label for="32C">32C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="32D" />
+                            <label for="32D">32D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="32E" />
+                            <label for="32E">32E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="32F" />
+                            <label for="32F">32F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="32G" />
+                            <label for="32G">32G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="32H" />
+                            <label for="32H">32H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="32J" />
+                            <label for="32J">32J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!-- Nueva fila con el número 33-->
+            <li class="row row--33">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="33A" />
+                            <label for="33A">33A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="33B" />
+                            <label for="33B">33B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="33C" />
+                            <label for="33C">33C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="33D" />
+                            <label for="33D">33D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="33E" />
+                            <label for="33E">33E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="33F" />
+                            <label for="33F">33F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="33G" />
+                            <label for="33G">33G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="33H" />
+                            <label for="33H">33H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="33J" />
+                            <label for="33J">33J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!-- Nueva fila con el número 34-->
+            <li class="row row--34">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="34A" />
+                            <label for="34A">34A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="34B" />
+                            <label for="34B">34B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="34C" />
+                            <label for="34C">34C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="34D" />
+                            <label for="34D">34D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="34E" />
+                            <label for="34E">34E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="34F" />
+                            <label for="34F">34F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="34G" />
+                            <label for="34G">34G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="34H" />
+                            <label for="34H">34H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="34J" />
+                            <label for="34J">34J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!-- Nueva fila con el número 35-->
+            <li class="row row--35">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="35A" />
+                            <label for="35A">35A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="35B" />
+                            <label for="35B">35B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="35C" />
+                            <label for="35C">35C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="35D" />
+                            <label for="35D">35D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="35E" />
+                            <label for="35E">35E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="35F" />
+                            <label for="35F">35F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="35G" />
+                            <label for="35G">35G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="35H" />
+                            <label for="35H">35H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="35J" />
+                            <label for="35J">35J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!-- Nueva fila con el número 36-->
+            <li class="row row--36">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="36A" />
+                            <label for="36A">36A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="36B" />
+                            <label for="36B">36B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="36C" />
+                            <label for="36C">36C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="36D" />
+                            <label for="36D">36D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="36E" />
+                            <label for="36E">36E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="36F" />
+                            <label for="36F">36F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="36G" />
+                            <label for="36G">36G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="36H" />
+                            <label for="36H">36H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="36J" />
+                            <label for="36J">36J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!-- Nueva fila con el número 37-->
+            <li class="row row--37">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="37A" />
+                            <label for="37A">37A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="37B" />
+                            <label for="37B">37B</label>
+                        </li>
+                    </ol>
+                <div class="aisle"></div>
+                <ol class="seats" type="A">
+                    <li class="seat">
+                        <input type="checkbox" id="37C" />
+                        <label for="37C">37C</label>
+                    </li>
+                    <li class="seat">
+                        <input type="checkbox" id="37D" />
+                        <label for="37D">37D</label>
+                    </li>
+                    <li class="seat">
+                        <input type="checkbox" id="37E" />
+                        <label for="37E">37E</label>
+                    </li>
+                    <li class="seat">
+                        <input type="checkbox" id="37F" />
+                        <label for="37F">37F</label>
+                    </li>
+                    <li class="seat">
+                        <input type="checkbox" id="37G" />
+                        <label for="37G">37G</label>
+                    </li>
+                </ol>
+                <div class="aisle"></div>
+                <ol class="seats" type="A">
+                    <li class="seat">
+                        <input type="checkbox" id="37H" />
+                        <label for="37H">37H</label>
+                    </li>
+                    <li class="seat">
+                        <input type="checkbox" id="37J" />
+                        <label for="37J">37J</label>
+                    </li>
+                </ol>
+                </div>
+            </li>
+            <!-- Nueva fila con el número 38-->
+            <li class="row row--38">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="38A" />
+                            <label for="38A">38A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="38B" />
+                            <label for="38B">38B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="38C" />
+                            <label for="38C">38C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="38D" />
+                            <label for="38D">38D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="38E" />
+                            <label for="38E">38E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="38F" />
+                            <label for="38F">38F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="38G" />
+                            <label for="38G">38G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="38H" />
+                            <label for="38H">38H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="38J" />
+                            <label for="38J">38J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!-- Nueva fila con el número 39-->
+            <li class="row row--39">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="39A" />
+                            <label for="39A">39A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="39B" />
+                            <label for="39B">39B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="39C" />
+                            <label for="39C">39C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="39D" />
+                            <label for="39D">39D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="39E" />
+                            <label for="39E">39E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="39F" />
+                            <label for="39F">39F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="39G" />
+                            <label for="39G">39G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="39H" />
+                            <label for="39H">39H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="39J" />
+                            <label for="39J">39J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!--Fila 40-->
+            <li class="row row--40">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="40A" />
+                            <label for="40A">40A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="40B" />
+                            <label for="40B">40B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="40C" />
+                            <label for="40C">40C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="40D" />
+                            <label for="40D">40D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="40E" />
+                            <label for="40E">40E</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="40F" />
+                            <label for="40F">40F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="40G" />
+                            <label for="40G">40G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="40H" />
+                            <label for="40H">40H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="40J" />
+                            <label for="40J">40J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!--41-->
+            <li class="row row--41">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="41A" />
+                            <label for="41A">41A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="41B" />
+                            <label for="41B">41B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="41C" />
+                            <label for="41C">41C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="41D" />
+                            <label for="41D">41D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="41F" />
+                            <label for="41F">41F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="41G">
+                            <label for="41G">41G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="41H" />
+                            <label for="41H">41H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="41J" />
+                            <label for="41J">41J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!--42-->
+            <li class="row row--42">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="42A" />
+                            <label for="42A">42A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="42B" />
+                            <label for="42B">42B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="42C" />
+                            <label for="42C">42C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="42D" />
+                            <label for="42D">42D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="42F" />
+                            <label for="42F">42F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="42G">
+                            <label for="42G">42G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="42H" />
+                            <label for="42H">42H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="42J" />
+                            <label for="42J">42J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!--43-->
+            <li class="row row--43">
+                <div class="seats-group">
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="43A" />
+                            <label for="43A">43A</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="43B" />
+                            <label for="43B">43B</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="43C" />
+                            <label for="43C">43C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="43D" />
+                            <label for="43D">43D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="43F" />
+                            <label for="43F">43F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="43G">
+                            <label for="43G">43G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <div class="aisle2"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="43H" />
+                            <label for="43H">43H</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="43J" />
+                            <label for="43J">43J</label>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <!--44-->
+            <li class="row row--44">
+                <div class="seats-group">
+                    <img class="imgbanho"src="img/male-and-female-toilet-sign-on-transparent-background-free-png.webp" alt="imagenbath">
+                    <div class="aisle"></div>
+                    <div class="aisle"></div>
+                    <div class="aisle2"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="44C" />
+                            <label for="44C">44C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="44D" />
+                            <label for="44D">44D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="44F" />
+                            <label for="44F">44F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="44G">
+                            <label for="44G">44G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <div class="aisle"></div>
+                    <img class="imgbanho"src="img/male-and-female-toilet-sign-on-transparent-background-free-png.webp" alt="imagenbath">
+                </div>
+            </li>
+            <!--45-->
+            <li class="row row--45">
+                <div class="seats-group">
+                    <img class="imgbanho"src="img/male-and-female-toilet-sign-on-transparent-background-free-png.webp" alt="imagenbath">
+                    <div class="aisle"></div>
+                    <div class="aisle"></div>
+                    <div class="aisle2"></div>
+                    <ol class="seats" type="A">
+                        <li class="seat">
+                            <input type="checkbox" id="45C" />
+                            <label for="45C">45C</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="45D" />
+                            <label for="45D">45D</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="45F" />
+                            <label for="45F">45F</label>
+                        </li>
+                        <li class="seat">
+                            <input type="checkbox" id="45G">
+                            <label for="45G">45G</label>
+                        </li>
+                    </ol>
+                    <div class="aisle"></div>
+                    <div class="aisle"></div>
+                    <img class="imgbanho"src="img/male-and-female-toilet-sign-on-transparent-background-free-png.webp" alt="imagenbath">
+                </div>
+            </li>
+        </ol>
+        <div class="exit exit--back fuselage"></div>
+    </div>
+    <div class="seat-selection-container">
+        <div class="seat-map-container">
+            <div class="seat-map">
+                <div class="screen-container">
+                    <span>Significado del color de los asientos</span>
+                </div>
+            </div>
+            <div class="seat-legend">
+                <div class="legend-item">
+                    <span class="legend-color available-color"></span>
+                    <span class="available-text">Disponible</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color reserved-color"></span>
+                    <span class="reserved-text">Reservado</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color selected-color"></span>
+                    <span class="selected-text">Seleccionado</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

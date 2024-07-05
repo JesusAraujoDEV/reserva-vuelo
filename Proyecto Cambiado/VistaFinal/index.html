@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 class="fuente2">VuelosC</h1>
+        </div>
+    </header>
+    <div class="paseAbordo-container">
+        <div class="paseAbordo">
+            <div class="factura factura2">
+                <div class="procedencia">
+                    <div class="codigo">1234</div>
+                    <div class="ciudad">Caracas</div>
+                </div>
+                <div class="vueloM">
+                    <img class="avion" src="img/614.png" alt="avion">
+                </div>
+                <div class="destino">
+                    <div class="codigo">2005</div>
+                    <div class="ciudad" id="destino-ciudad">Barcelona</div>
+                </div>
+            </div>
+            <div class="medio"></div>
+            <div class="factura facturaAbajo">
+                <div class="facturaFila">
+                    <div class="factura-item">
+                        <span class="label">Pasajero</span>
+                        <p class="contenido" id="nombreStatic">Lionel</p>
+                    </div>
+                    <div class="factura-item">
+                        <span class="label">Fecha</span>
+                        <p class="contenido">05/07/2024</p>
+                    </div>
+                </div>
+                <div class="facturaFila">
+                    <div class="factura-item">
+                        <span class="label">Nro Vuelo</span>
+                        <p class="contenido">534</p>
+                    </div>
+                    <div class="factura-item">
+                        <span class="label">Puerta</span>
+                        <p class="contenido">23</p>
+                    </div>
+                    <div class="factura-item">
+                        <span class="label">Asiento</span>
+                        <p class="contenido" id="asientoSeleccionado">B30</p>
+                    </div>
+                    <div class="factura-item">
+                        <span class="label">Clase</span>
+                        <p class="contenido">Ejecutiva</p>
+                    </div>
+                </div>
+                <div class="facturaFila">
+                    <div class="factura-item">
+                        <span class="label">Hora de embarque</span>
+                        <p class="contenido">9:45</p>
+                    </div>
+                    <div class="factura-item">
+                        <span class="label">Hora de despegue</span>
+                        <p class="contenido">10:30</p>
+                    </div>
+                    <div class="factura-item">
+                        <span class="label">Hora de llegada</span>
+                        <p class="contenido">22:40</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="paseAbordo">
+            <div class="factura factura2">
+                <div class="procedencia">
+                    <div class="codigo">1234</div>
+                    <div class="ciudad">Caracas</div>
+                </div>
+                <div class="vueloM">
+                    <img class="avion" src="img/614.png" alt="avion">
+                </div>
+                <div class="destino">
+                    <div class="codigo">2005</div>
+                    <div class="ciudad" id="destino-ciudad2">Barcelona</div>
+                </div>
+            </div>
+            <div class="medio"></div>
+            <div class="factura facturaAbajo">
+                <div class="facturaFila">
+                    <div class="factura-item">
+                        <span class="label">Precio</span>
+                        <p class="contenido" id="precioTODO">100$</p>
+                    </div>
+                    <div class="factura-item">
+                        <button class="pagarBtn" id="submitBtn">Pagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
