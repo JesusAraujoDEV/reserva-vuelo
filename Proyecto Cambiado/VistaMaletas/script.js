@@ -190,18 +190,6 @@ const nacionalidades = [
   "Zimbabue"
 ];
 
-// Función para agregar opciones al dropdown
-function populateDropdown() {
-  const dropdown = document.getElementById('nacionalidadSelect');
-
-  nacionalidades.forEach(nacionalidad => {
-      const option = document.createElement('option');
-      option.value = nacionalidad.toLowerCase();
-      option.text = nacionalidad;
-      dropdown.appendChild(option);
-  });
-}
-
 const paisesConPrefijo = {
   "Afganistán": "+93",
   "Albania": "+355",
@@ -401,6 +389,18 @@ const paisesConPrefijo = {
   "Zimbabue": "+263"
 };
 
+// Función para agregar opciones al dropdown
+function populatePaisesDropdown() {
+  const dropdown = document.getElementById('nacionalidad');
+
+  nacionalidades.forEach(nacionalidad => {
+      const option = document.createElement('option');
+      option.value = nacionalidad.toLowerCase();
+      option.text = nacionalidad;
+      dropdown.appendChild(option);
+  });
+}
+
 // Función para poblar el dropdown con los países y prefijos
 function populateDropdown() {
   const dropdown = document.getElementById('prefijosDropdown');
@@ -417,7 +417,7 @@ function populateDropdown() {
 }
 
 // Llamar a la función para poblar el dropdown cuando se cargue la página
-document.addEventListener('DOMContentLoaded', populateDropdown);
+document.addEventListener('DOMContentLoaded', populatePaisesDropdown);
 
 
 // Llamar a la función para poblar el dropdown cuando se cargue la página
@@ -483,7 +483,7 @@ const precio = urlParams.get('precio');
 
 // Mostrar los datos en los elementos correspondientes
 document.getElementById('destino-ciudad').textContent = `Caracas-${ciudad}`;
-document.getElementById('precioTODO').textContent = `${precio},00USD`;
+document.getElementById('precioTODO').textContent = `${precio}USD`;
 
 
 document.getElementById("submitBtn").addEventListener("click", function(event) {
@@ -495,6 +495,12 @@ document.getElementById("submitBtn").addEventListener("click", function(event) {
   const mes = document.getElementById("mesDropdown").value;
   const año = document.getElementById("añoDropdown").value;
   const nacionalidad = document.getElementById("nacionalidad").value;
+
+  const prefijo = document.getElementById("prefijosDropdown").value;
+  const postfijo = document.getElementById("telefonoInput").value;
+  const numeroTelefono = prefijo + postfijo;
+
+  const correo = document.getElementById("emailInput")
   // Destino
   // Obtener el elemento por su id
   const destinoCiudadElement = document.getElementById('destino-ciudad');
@@ -507,10 +513,10 @@ document.getElementById("submitBtn").addEventListener("click", function(event) {
   let precioBaseText = precioBaseElement.textContent.trim(); // Remueve espacios alrededor
   precioBaseText = precioBaseText.replace(/[^\d,.-]/g, ''); // Remueve cualquier carácter no numérico excepto , y .
   const costo = parseFloat(precioBaseText.replace(',', '.')); // Convierte el texto a número
-  console.log(precioBaseElement)
+  console.log(costo)
 
   // Validar que todos los campos estén completos
-  if (!nombre || !apellido || !genero || !dia || !mes || !año || !nacionalidad) {
+  if (!nombre || !apellido || !genero || !dia || !mes || !año || !nacionalidad || !postfijo || !prefijo || !correo || (postfijo.value < 10)) {
       alert("Por favor complete todos los campos del formulario.");
       event.preventDefault(); // Evitar la acción por defecto (cambiar de página)
       return;
@@ -527,12 +533,12 @@ document.getElementById("submitBtn").addEventListener("click", function(event) {
           año: año
       },
       nacionalidad: nacionalidad,
-      costo: costo,
       destino: ciudad
   };
 
   // Guardar los datos en localStorage
   localStorage.setItem("datosFormulario", JSON.stringify(datos));
+  localStorage.setItem("costo", costo);
 
   // Redirigir a la página destino
   window.location.href = "../asientosPrueba3/index.html";
@@ -578,6 +584,8 @@ document.addEventListener('DOMContentLoaded', function() {
   let precioBaseText = precioBaseElement.textContent.trim(); // Remueve espacios alrededor
   precioBaseText = precioBaseText.replace(/[^\d,.-]/g, ''); // Remueve cualquier carácter no numérico excepto , y .
   let precioBase = parseFloat(precioBaseText.replace(',', '.')); // Convierte el texto a número
+  
+  console.log(precioBase)
 
 
   menosButtons.forEach(button => {
@@ -617,7 +625,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Actualiza todos los elementos con la clase 'precio-todo'
       precioTODOs.forEach(precioElement => {
-          precioElement.textContent = nuevoPrecio.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + 'USD';
+          precioElement.textContent = nuevoPrecio.toLocaleString() + 'USD';
       });
+
+      console.log(nuevoPrecio)
   }
+});
+
+document.getElementById("telefonoInput").addEventListener("input", function(event) {
+  const input = event.target;
+  const value = input.value;
+
+  // Remover caracteres no numéricos
+  const sanitizedValue = value.replace(/\D/g, '');
+
+  // Limitar a 10 cifras
+  const limitedValue = sanitizedValue.slice(0, 10);
+
+  // Actualizar el valor del input
+  input.value = limitedValue;
 });

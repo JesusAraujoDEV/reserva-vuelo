@@ -35,6 +35,7 @@ checkboxes.forEach(function(checkbox) {
 
 // Recuperar los datos de localStorage
 const datos = JSON.parse(localStorage.getItem("datosFormulario"));
+const costo = localStorage.getItem("costo");
 
 if (datos) {
     // Actualizar los elementos con los datos del formulario
@@ -45,7 +46,7 @@ if (datos) {
     document.getElementById("mesStatic").textContent = datos.fechaNacimiento.mes;
     document.getElementById("añoStatic").textContent = datos.fechaNacimiento.año;
     document.getElementById("nacionalidadStatic").textContent = datos.nacionalidad;
-    document.getElementById('precioTODO').textContent = `${datos.costo},00USD`;
+    document.getElementById('precioTODO').textContent = `${costo}0USD`;
     document.getElementById('destino-ciudad').textContent = `Caracas-${datos.destino}`;
 } else {
     // Manejar el caso en que no se encuentran datos
@@ -58,8 +59,15 @@ document.addEventListener("DOMContentLoaded", function() {
         // Capturar el asiento seleccionado
         const asiento = document.getElementById("asientoSeleccionado").textContent.trim();
 
+        if (!asiento) {
+            alert("Por favor seleccione su asiento.");
+            event.preventDefault(); // Evitar la acción por defecto (cambiar de página)
+            return;
+        }
+
         // Guardar solo el asiento en localStorage
         localStorage.setItem("asientoSeleccionado", asiento);
+
 
         // Redirigir a la página destino
         window.location.href = "../VistaFinal/index.html";

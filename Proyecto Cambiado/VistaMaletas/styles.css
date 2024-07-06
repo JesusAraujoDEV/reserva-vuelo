@@ -850,3 +850,9 @@ header {
     border: rgb(61, 106, 255);
     border-color: rgb (61, 106, 255);
   }
+
+/* Añade esto a tu archivo CSS */
+.input-invalido {
+    border: 2px solid red;
+}
+

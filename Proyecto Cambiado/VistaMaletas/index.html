@@ -54,25 +54,16 @@
                     <div class="input-style-group">
                         <select id="diaDropdown" class="input-style-select">
                             <option value="" disabled selected>Día</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
                             <!-- ... hasta 31 -->
                         </select>
                     
                         <select id="mesDropdown" class="input-style-select">
                             <option value="" disabled selected>Mes</option>
-                            <option value="enero">Enero</option>
-                            <option value="febrero">Febrero</option>
-                            <option value="marzo">Marzo</option>
                             <!-- ... hasta diciembre -->
                         </select>
                     
                         <select id="añoDropdown" class="input-style-select">
                             <option value="" disabled selected>Año</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
                             <!-- ... hasta el año que desees -->
                         </select>
                     </div>
@@ -105,14 +96,14 @@
     
                 <div class="input-group">
                     <label class="label">Teléfono</label>
-                    <input placeholder="Número telefónico" autocomplete="off" class="input-style" type="text">
+                    <input placeholder="Número telefónico" maxlength="10" id="telefonoInput" class="input-style" type="text">
                     <div></div>
                 </div>
             </div>
 
             <div class="input-group-email">
                 <label class="label">Correo Electrónico</label>
-                <input placeholder="corre@mail.com" autocomplete="off" class="input-style-email" type="email">
+                <input placeholder="corre@mail.com" id="emailInput" class="input-style-email" type="text">
                 <div></div>
             </div>
             
@@ -226,9 +217,6 @@
 
     <div class="button-div">
         <div class="titulo-icono">
-            <div class="destino">
-                <p class="destino-ciudad" id="destino-ciudad">Caracas-Liverpool</p>
-            </div>
             <div class="precio-abajo">
                 <div class="titulo-icono">
                     <div class="gg-shopping-cart"></div>
